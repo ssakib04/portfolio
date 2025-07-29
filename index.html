@@ -1,463 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Kaji Sadman Sakib</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-p {
-    font-size: large;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url('images/background.png');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #ffffff;
-    line-height: 1.6;
-    transition: background-color 0.5s, color 0.5s;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    height: 5rem;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 1.5rem;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    padding-top: 5rem;
-}
-
-header h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-bottom: 2rem;
-}
-
-header p {
-    font-size: 2.4rem;
-    color: #dddddd;
-    margin-bottom: 3rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.profile-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-}
-
-section {
-    padding: 5rem 2rem;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    color: #ffcc00;
-}
-
-.card {
-    background: darkslategrey;
-    border-radius: 10px;
-    padding: 1.5rem;
-    color: #ffffff;
-    width: calc(33.33% - 2rem);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-#contact {
-    display: flex;
-    flex-direction: column; /* Aligns the contact items vertically */
-    justify-content: center; /* Centers the content vertically */
-    align-items: center; /* Centers the content horizontally */
-    gap: 2rem; /* Adds space between contact items */
-    text-align: center; /* Ensures text inside the contact links is centered */
-    padding: 5rem 2rem; /* Padding for spacing */
-}
-
-.contact-link {
-    display: inline-block;
-    background-color: #333333; /* Dark grey background */
-    color: white;
-    padding: 1.2rem 2.5rem; /* Slightly increased padding for width */
-    margin: 1rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.5rem; /* Slightly bigger text */
-    font-weight: bold;
-    width: 100%; /* Ensures contact links are full width */
-    max-width: 500px; /* Sets a maximum width for larger screens */
-    text-align: center; /* Centers text within the contact link */
-    transition: background-color 0.3s ease;
-}
-
-.contact-link:hover {
-    background-color: #555555; /* Slightly lighter grey on hover */
-}
-
-    padding: 5rem 2rem; /* Padding for spacing */
-}
-
-.contact-link {
-    display: inline-block;
-    background-color: #333333; /* Dark grey background */
-    color: white;
-    padding: 1rem 2rem;
-    margin: 1rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    width: 100%; /* Ensures contact links are full width */
-    max-width: 400px; /* Limits the width for larger screens */
-    text-align: center; /* Centers text within the contact link */
-    transition: background-color 0.3s ease;
-}
-
-.contact-link:hover {
-    background-color: #555555; /* Slightly lighter grey on hover */
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-}
-
-#experience {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centers the cards horizontally */
-    gap: 2rem; /* Adds space between the rows and columns */
-    margin-top: 3rem; /* Adds space above the experience cards */
-    text-align: center;
-    padding: 5rem 2rem; /* Padding for spacing */
-}
-
-#experience h2 {
-    text-align: center; /* Centers the title text */
-    font-size: 4rem;
-    margin-bottom: 3rem;
-    color: #ffcc00;
-    width: 100%; /* Ensures it takes up the full width of the container */
-}
-
-#experience .card {
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 1.5rem;
-    color: #ffffff;
-    width: calc(33.33% - 2rem); /* This ensures 3 cards per row */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    margin: 0 auto; /* Centers the card */
-}
-
-#experience .card:hover {
-    transform: scale(1.05);
-}
-
-#experience .card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-#experience .card h3 {
-    font-size: 2.4rem;
-    color: #ffcc00;
-}
-
-#experience .card p {
-    font-size: 1.2rem;
-    color: #dddddd;
-    margin-bottom: 1rem;
-}
-
-#experience .card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centers the project cards */
-    gap: 2rem;
-    margin-top: 3rem;
-    text-align: center; /* Ensures the content inside the section is centered */
-}
-
-#projects h2 {
-    width: 100%; /* Ensure the title takes up full width */
-    text-align: center; /* Centers the text */
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    color: #ffcc00;
-}
-
-#about p{
-    font-size: 25px;
-    justify-content: center;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .card {
-        width: calc(50% - 2rem); /* Two cards per row */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Kaji Sadman Sakib</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    #projects, #experience {
-        justify-content: center;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #1a1a1a, #0f0f0f);
+      color: #fff;
+      overflow-x: hidden;
     }
-}
 
-@media (max-width: 768px) {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+
     nav ul {
-        flex-direction: column;
-        align-items: center;
+      list-style: none;
+      display: flex;
+      gap: 2rem;
     }
 
-    nav ul li {
-        margin: 1rem 0;
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 10rem 2rem 5rem;
+      background: url('images/background.png') center/cover no-repeat;
     }
 
     header h1 {
-        font-size: 4rem; /* Smaller font for mobile */
+      font-size: 4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
     }
 
     header p {
-        font-size: 1.8rem;
-    }
-
-    .profile-image {
-        width: 250px;
-        height: 250px;
+      font-size: 1.8rem;
+      color: #aaa;
     }
 
     section {
-        padding: 3rem 1rem;
-    }
-
-    .card {
-        width: calc(100% - 2rem); /* One card per row */
-    }
-
-    #contact .contact-link {
-        width: calc(100% - 2rem); /* Full width for contact links */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 3rem; /* Even smaller font on small screens */
-    }
-
-    header p {
-        font-size: 1.6rem;
-    }
-
-    .profile-image {
-        width: 200px;
-        height: 200px;
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
     section h2 {
-        font-size: 3rem; /* Smaller section titles */
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #ffcc00;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: justify;
+      color: #ccc;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
 
     .card {
-        width: 100%; /* Full-width cards for very small screens */
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
     }
 
-    #projects .card, #experience .card {
-        width: 100%;
+    .card:hover {
+      transform: translateY(-5px);
     }
-}
 
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
 
+    .card h1, .card h3 {
+      font-size: 1.5rem;
+      color: #ffcc00;
+    }
 
-    </style>
+    .card p {
+      color: #ccc;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .card a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .contact-link {
+      display: block;
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-link:hover {
+      background: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      color: #777;
+      margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <div style="font-weight: bold; color: #ffcc00;">Sadman</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#experience">Experience</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Reshape Intelligence. <br>Together.</h1>
+    <p>Machine Learning Engineer | Research Enthusiast | Developer</p>
+  </header>
 
-    <header>
-        <img src="images/dp2.jpeg" alt="Kaji Sadman Sakib" class="profile-image">
-        <h1>Kaji Sadman Sakib</h1>
-        <p>Machine Learning Engineer</p>
-    </header>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am Kaji Sadman Sakib, a Computer Science and Engineering graduate from BRAC University. My academic journey has always been fueled by a deep interest in problem-solving and algorithms, which naturally led me to explore the fields of machine learning and artificial intelligence. I am particularly fascinated by deep neural networks and generative AI...
+    </p>
+  </section>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>I am Kaji Sadman Sakib, a Computer Science and Engineering graduate from BRAC University. My academic journey has always been fueled by a deep interest in problem-solving and algorithms, which naturally led me to explore the fields of machine learning and artificial intelligence. I am particularly fascinated by deep neural networks and generative AI, as I believe these technologies hold immense potential to transform the way we interact with the world.
-            Throughout my studies, I have focused on building a strong foundation in algorithmic thinking and technical problem-solving. I find great satisfaction in tackling challenges that require creativity and analytical skills. Beyond academics, I enjoy playing chess, which sharpens my strategic thinking, and working out, which helps me stay disciplined and focused.
-            Looking ahead, I aspire to work on projects that advance AI and machine learning technologies, especially in areas where creativity meets innovation, like generative AI. My goal is to contribute to solutions that not only solve complex problems but also push the boundaries of what AI can achieve. I see my educational background as the springboard to achieve these ambitions, combining technical expertise with a passion for learning and growth.</p>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/spotify.png" alt="Spotify Clone">
+        <h1>Spotify Clone</h1>
+        <a href="https://github.com/ssakib04/Spotify-clone">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/snakegame.png" alt="Snake Game">
+        <h1>Snake Game</h1>
+        <a href="https://github.com/ssakib04/Snake-Game">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/1.jpeg" alt="Linear Regression">
+        <h1>Linear Regression</h1>
+        <a href="https://github.com/ssakib04/Linear-Regression">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/2.jpeg" alt="K-Means">
+        <h1>K-Means Segmentation</h1>
+        <a href="https://github.com/ssakib04/K-Means-Segmentation">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/3.jpeg" alt="SVM">
+        <h1>Support Vector Machine</h1>
+        <a href="https://github.com/ssakib04/Support-Vector-Machine">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/4.jpeg" alt="Gesture Recognition">
+        <h1>Hand Gesture Recognition</h1>
+        <a href="https://github.com/ssakib04/Hand-Gesture-Recognition">View on GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-            <h2>Projects</h2>
-        <!-- Add 8 project cards here -->
-        <div class="card">
-            <img src="images/spotify.png" alt="Project 1">
-            <p><h1>Spotify Clone</h1></p>
-            <a href="https://github.com/ssakib04/Spotify-clone">View on GitHub</a>
-        </div>
-        <div class="card">
-            <img src="images/snakegame.png" alt="Project 2">
-            <p><h1>Snake Game</h1></p>
-            <a href="https://github.com/ssakib04/Snake-Game">View on GitHub</a>
-        </div>
-        <div class="card">
-            <img src="images/1.jpeg" alt="Project 3">
-            <p><h1>Linear Regression</h1></p>
-            <a href="https://github.com/ssakib04/Linear-Regression">View on GitHub</a>
-        </div>
-        <div class="card">
-            <img src="images/2.jpeg" alt="Project 4">
-            <p><h1>K-Means Segmentation</h1></p>
-            <a href="https://github.com/ssakib04/K-Means-Segmentation">View on GitHub</a>
-        </div>
-        <div class="card">
-            <img src="images/3.jpeg" alt="Project 5">
-            <p><h1>Support Vector Machine</h1></p>
-            <a href="https://github.com/ssakib04/Support-Vector-Machine">View on GitHub</a>
-        </div>
-        <div class="card">
-            <img src="images/4.jpeg" alt="Project 6">
-            <p><h1>Hand Gesture Recognition</h1></p>
-            <a href="https://github.com/ssakib04/Hand-Gesture-Recognition">View on GitHub</a>
-        </div>
-    </section>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/prodigy infotech.png" alt="Prodigy InfoTech">
+        <h3>Prodigy InfoTech</h3>
+        <p><strong>Role:</strong> Machine Learning Intern</p>
+        <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
+        <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
+      </div>
+      <div class="card">
+        <img src="images/cropped-cropped-logo_edited.png" alt="BritSync">
+        <h3>BritSync Itl.</h3>
+        <p><strong>Role:</strong> Web Development Intern</p>
+        <p><strong>Duration:</strong> Feb 2025 - Jun 2024</p>
+        <a href="https://britsync.co.uk/" target="_blank">Visit Website</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><a href="mailto:kazisadmansakib@gmail.com" class="contact-link">Email</a></p>
-        <p><a href="https://github.com/ssakib04" class="contact-link">GitHub</a></p>
-        <p><a href="https://www.linkedin.com/in/kajisadmansakib/" class="contact-link">LinkedIn</a></p>
-        <p><a href="https://www.hackerrank.com/profile/ssakib218" class="contact-link">HackerRank</a></p>
-        <p><a href="https://codeforces.com/profile/Shafat04" class="contact-link">Codeforces</a></p>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <a href="mailto:kazisadmansakib@gmail.com" class="contact-link">Email</a>
+    <a href="https://github.com/ssakib04" class="contact-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/kajisadmansakib/" class="contact-link">LinkedIn</a>
+    <a href="https://www.hackerrank.com/profile/ssakib218" class="contact-link">HackerRank</a>
+    <a href="https://codeforces.com/profile/Shafat04" class="contact-link">Codeforces</a>
+  </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <!-- Experience 1 -->
-        <div class="card">
-            <img src="images/prodigy infotech.png" alt="Prodigy InfoTech Logo"> <!-- Optional Image -->
-            <h3>Prodigy InfoTech</h3>
-            <p><strong>Role:</strong> Machine Learning Intern</p>
-            <p><strong>Duration:</strong> October 2024 - December 2024</p>
-            <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a> <!-- Optional Link -->
-        </div>
-<div class="card">
-            <img src="images/cropped-cropped-logo_edited.png" alt="BritSync Itl Logo"> <!-- Optional Image -->
-            <h3>BritSync Itl.</h3>
-            <p><strong>Role:</strong> Web Development Intern </p>
-            <p><strong>Duration:</strong> February 2025 - June 2024</p>
-            <a href="https://britsync.co.uk/" target="_blank">Visit Website</a> <!-- Optional Link -->
-        </div
-
-    </section>
-    
-
-    <footer>
-        <p>&copy; 2025 Kaji Sadman Sakib | All rights reserved.</p>
-    </footer>
-
-    <script>
-        window.onload = function() {
-            window.scrollTo(0, 0); // Scrolls to the top of the page
-        }
-    </script>
-    
+  <footer>
+    <p>&copy; 2025 Kaji Sadman Sakib | All rights reserved.</p>
+  </footer>
 </body>
 </html>
