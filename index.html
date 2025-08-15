@@ -30,66 +30,55 @@
       100% { background-position: 0% 50%; }
     }
 
-    nav {
+    .page {
       display: none;
+      min-height: 100vh;
+      position: relative;
+      padding: 2rem;
     }
 
-    nav:hover {
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    .page.active {
+      display: block;
     }
 
-    nav div {
-      font-weight: 800;
-      font-size: 1.6rem;
-      color: #000;
-      letter-spacing: 2px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.8rem;
-    }
-
-    nav ul li a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.8rem 1.5rem;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.9);
-      color: #000;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    header {
+    /* HOME PAGE STYLES */
+    .home-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       text-align: center;
-      padding: 4rem 2rem;
-      animation: fadeIn 1.5s ease-in-out;
       position: relative;
     }
 
-    .floating-nav {
+    .main-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      letter-spacing: -2px;
+      line-height: 1.1;
+      z-index: 10;
+      position: relative;
+    }
+
+    .main-subtitle {
+      font-size: 1.6rem;
+      color: #333;
+      max-width: 800px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* NAVIGATION BUBBLES */
+    .nav-bubble {
       position: absolute;
-      width: 80px;
-      height: 80px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(15px);
@@ -100,424 +89,434 @@
       color: #000;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       animation: float 4s ease-in-out infinite;
+      cursor: pointer;
     }
 
-    .floating-nav:hover {
+    .nav-bubble:hover {
       transform: scale(1.1) translateY(-5px);
       background: rgba(255, 255, 255, 0.2);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
     }
 
-    .floating-nav:nth-child(1) {
+    .nav-bubble:nth-child(1) {
       top: 15%;
       left: 10%;
       animation-delay: 0s;
     }
 
-    .floating-nav:nth-child(2) {
+    .nav-bubble:nth-child(2) {
       top: 25%;
       right: 15%;
       animation-delay: 1s;
     }
 
-    .floating-nav:nth-child(3) {
+    .nav-bubble:nth-child(3) {
       bottom: 30%;
       left: 8%;
       animation-delay: 2s;
     }
 
-    .floating-nav:nth-child(4) {
+    .nav-bubble:nth-child(4) {
       bottom: 15%;
       right: 12%;
       animation-delay: 3s;
     }
 
-    .floating-nav:nth-child(5) {
+    .nav-bubble:nth-child(5) {
       top: 45%;
       left: 5%;
       animation-delay: 0.5s;
     }
 
-    header h1 {
-      font-size: 4.5rem;
-      font-weight: 800;
-      color: #000;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      letter-spacing: -2px;
-      line-height: 1.1;
-    }
-
-    header p {
-      font-size: 1.6rem;
-      color: #333;
-      max-width: 800px;
-      font-weight: 300;
-      letter-spacing: 1px;
-    }
-
-    section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 3.2rem;
-      text-align: center;
-      margin-bottom: 4rem;
-      color: #000;
-      position: relative;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    section h2::after {
-      content: "";
-      display: block;
-      height: 3px;
-      width: 100px;
-      background: linear-gradient(90deg, #000, #666);
-      margin: 1rem auto 0;
-      border-radius: 5px;
-    }
-
-    #about {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(20px);
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
-      margin: 2rem auto;
-      transition: all 0.3s ease;
-    }
-
-    #about:hover {
+    /* CONTENT BUBBLES */
+    .content-bubble {
+      position: absolute;
+      border-radius: 50%;
       background: rgba(255, 255, 255, 0.12);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    #about p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      text-align: justify;
-      color: #000;
-      animation: fadeUp 1.2s ease;
-      font-weight: 400;
-    }
-
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      justify-content: center;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 2rem;
-      width: 320px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-      transition: all 0.4s ease;
       backdrop-filter: blur(20px);
-      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.4s ease;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      animation: float 6s ease-in-out infinite;
+      padding: 1.5rem;
+      text-align: center;
       overflow: hidden;
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    .content-bubble:hover {
+      transform: scale(1.05) translateY(-8px);
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
-    .card:hover {
-      transform: translateY(-12px) scale(1.05);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    /* ABOUT PAGE BUBBLES */
+    .about-bubble {
+      width: 200px;
+      height: 200px;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 16px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    .about-image-bubble {
+      width: 250px;
+      height: 250px;
+    }
+
+    .about-image-bubble img {
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* PROJECT BUBBLES */
+    .project-bubble {
+      width: 200px;
+      height: 200px;
+      font-size: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .project-bubble h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .project-bubble a {
+      color: #000;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
       transition: all 0.3s ease;
     }
 
-    .card:hover img {
-      transform: scale(1.02);
+    .project-bubble a:hover {
+      background: rgba(255, 255, 255, 0.5);
     }
 
-    .card h1, .card h3 {
-      font-size: 1.6rem;
-      color: #000;
+    /* EXPERIENCE BUBBLES */
+    .experience-bubble {
+      width: 300px;
+      height: 300px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .experience-bubble h3 {
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       font-weight: 600;
     }
 
-    .card p {
+    .experience-bubble a {
       color: #000;
-      font-size: 1rem;
-      margin: 0.5rem 0;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .card a {
-      color: #000;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 0.8rem 1.5rem;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
       margin-top: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
-    .card a:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    .experience-bubble a:hover {
+      background: rgba(255, 255, 255, 0.5);
     }
 
-    .contact-link {
-      display: block;
-      background: rgba(255, 255, 255, 0.12);
+    /* CONTACT BUBBLES */
+    .contact-bubble {
+      width: 180px;
+      height: 180px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .contact-bubble:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #000;
-      padding: 1.2rem;
-      margin: 1.5rem auto;
-      max-width: 400px;
-      text-align: center;
-      border-radius: 16px;
-      font-size: 1.2rem;
       text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.2rem;
       transition: all 0.3s ease;
-      letter-spacing: 1px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      cursor: pointer;
     }
 
-    .contact-link:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .back-btn:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.25);
     }
 
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      color: #000;
-      margin-top: 4rem;
-      font-size: 0.95rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-weight: 300;
+    /* ANIMATIONS */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* BUBBLE POSITIONS */
+    .bubble-1 { top: 10%; left: 15%; animation-delay: 0s; }
+    .bubble-2 { top: 20%; right: 10%; animation-delay: 0.5s; }
+    .bubble-3 { top: 40%; left: 5%; animation-delay: 1s; }
+    .bubble-4 { top: 60%; right: 20%; animation-delay: 1.5s; }
+    .bubble-5 { bottom: 25%; left: 25%; animation-delay: 2s; }
+    .bubble-6 { bottom: 10%; right: 5%; animation-delay: 2.5s; }
+    .bubble-7 { top: 30%; left: 45%; animation-delay: 3s; }
+    .bubble-8 { bottom: 40%; right: 35%; animation-delay: 3.5s; }
 
-    /* Floating animation for some elements */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .card:nth-child(odd) {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .card:nth-child(even) {
-      animation: float 6s ease-in-out infinite reverse;
-    }
-
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav {
-        padding: 1rem 2rem;
+      .main-title {
+        font-size: 2.5rem;
       }
 
-      nav ul {
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(20px);
-        position: absolute;
-        top: 80px;
-        right: 2rem;
-        left: 2rem;
-        padding: 1.5rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        display: none;
+      .main-subtitle {
+        font-size: 1.2rem;
       }
 
-      nav ul.show {
-        display: flex;
+      .nav-bubble {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
       }
 
-      nav ul li {
-        margin: 0.5rem 0;
+      .content-bubble {
+        font-size: 0.8rem;
+        padding: 1rem;
       }
 
-      header h1 {
-        font-size: 3rem;
+      .about-bubble,
+      .project-bubble {
+        width: 150px;
+        height: 150px;
       }
 
-      header p {
-        font-size: 1.3rem;
+      .experience-bubble {
+        width: 200px;
+        height: 200px;
       }
 
-      section {
-        padding: 4rem 1.5rem;
-      }
-
-      .card {
-        width: 90%;
-        margin: 0 auto;
-      }
-
-      .contact-link {
-        margin: 1rem auto;
+      .contact-bubble {
+        width: 140px;
+        height: 140px;
       }
     }
-
-    /* Add subtle scroll animations */
-    section {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    section:nth-child(1) { animation-delay: 0.1s; }
-    section:nth-child(2) { animation-delay: 0.2s; }
-    section:nth-child(3) { animation-delay: 0.3s; }
-    section:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
-  <nav>
-    <div>Kaji Sadman Sakib</div>
-    <ul id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- HOME PAGE -->
+  <div class="page active" id="home">
+    <div class="home-container">
+      <div class="nav-bubble" onclick="showPage('about')">About</div>
+      <div class="nav-bubble" onclick="showPage('projects')">Projects</div>
+      <div class="nav-bubble" onclick="showPage('experience')">Experience</div>
+      <div class="nav-bubble" onclick="showPage('contact')">Contact</div>
+      <div class="nav-bubble" onclick="showPage('home')">Home</div>
+      
+      <h1 class="main-title">Reshape Intelligence.<br>Together.</h1>
+      <p class="main-subtitle">Machine Learning Engineer | <span style="color: #fff;">Research Enthusiast | Developer</span></p>
+    </div>
+  </div>
 
-  <header>
-    <a href="#about" class="floating-nav">About</a>
-    <a href="#projects" class="floating-nav">Projects</a>
-    <a href="#experience" class="floating-nav">Experience</a>
-    <a href="#contact" class="floating-nav">Contact</a>
-    <a href="#" class="floating-nav">Home</a>
+  <!-- ABOUT PAGE -->
+  <div class="page" id="about">
+    <div class="back-btn" onclick="showPage('home')">←</div>
     
-    <h1>Reshape Intelligence.<br>Together.</h1>
-    <p>Machine Learning Engineer | <span style="color: #fff;">Research Enthusiast | Developer</span></p>
-  </header>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am Kaji Sadman Sakib, a Computer Science and Engineering graduate from BRAC University. My academic journey has always been fueled by a deep interest in problem-solving and algorithms, which naturally led me to explore the fields of machine learning and artificial intelligence. I am particularly fascinated by deep neural networks and generative AI...
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="images/spotify.png" alt="Spotify Clone">
-        <h1>Spotify Clone</h1>
-        <a href="https://github.com/ssakib04/Spotify-clone">View on GitHub</a>
-      </div>
-      <div class="card">
-        <img src="images/snakegame.png" alt="Snake Game">
-        <h1>Snake Game</h1>
-        <a href="https://github.com/ssakib04/Snake-Game">View on GitHub</a>
-      </div>
-      <div class="card">
-        <img src="images/1.jpeg" alt="Linear Regression">
-        <h1>Linear Regression</h1>
-        <a href="https://github.com/ssakib04/Linear-Regression">View on GitHub</a>
-      </div>
-      <div class="card">
-        <img src="images/2.jpeg" alt="K-Means">
-        <h1>K-Means Segmentation</h1>
-        <a href="https://github.com/ssakib04/K-Means-Segmentation">View on GitHub</a>
-      </div>
-      <div class="card">
-        <img src="images/3.jpeg" alt="SVM">
-        <h1>Support Vector Machine</h1>
-        <a href="https://github.com/ssakib04/Support-Vector-Machine">View on GitHub</a>
-      </div>
-      <div class="card">
-        <img src="images/4.jpeg" alt="Gesture Recognition">
-        <h1>Hand Gesture Recognition</h1>
-        <a href="https://github.com/ssakib04/Hand-Gesture-Recognition">View on GitHub</a>
-      </div>
+    <div class="content-bubble about-image-bubble bubble-1">
+      <img src="images/profile.jpg" alt="Kaji Sadman Sakib" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
     </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="images/prodigy infotech.png" alt="Prodigy InfoTech">
-        <h3>Prodigy InfoTech</h3>
-        <p><strong>Role:</strong> Machine Learning Intern</p>
-        <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
-        <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
-      </div>
-      <div class="card">
-        <img src="images/cropped-cropped-logo_edited.png" alt="BritSync">
-        <h3>BritSync Itl.</h3>
-        <p><strong>Role:</strong> Web Development Intern</p>
-        <p><strong>Duration:</strong> Feb 2025 - Jun 2024</p>
-        <a href="https://britsync.co.uk/" target="_blank">Visit Website</a>
-      </div>
+    
+    <div class="content-bubble about-bubble bubble-2">
+      <p>Computer Science graduate from BRAC University with deep passion for AI and machine learning.</p>
     </div>
-  </section>
+    
+    <div class="content-bubble about-bubble bubble-3">
+      <p>Fascinated by deep neural networks and generative AI technologies that reshape our world.</p>
+    </div>
+    
+    <div class="content-bubble about-bubble bubble-4">
+      <p>Problem-solving enthusiast who loves tackling complex algorithmic challenges.</p>
+    </div>
+    
+    <div class="content-bubble about-bubble bubble-5">
+      <p>Research-oriented mindset with focus on cutting-edge AI applications.</p>
+    </div>
+    
+    <div class="content-bubble about-bubble bubble-6">
+      <p>Dedicated to building intelligent systems that make a positive impact.</p>
+    </div>
+    
+    <div class="content-bubble about-bubble bubble-7">
+      <p>Continuous learner exploring the frontiers of artificial intelligence.</p>
+    </div>
+    
+    <div class="content-bubble about-bubble bubble-8">
+      <p>Passionate about bridging theory and practice in machine learning projects.</p>
+    </div>
+  </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <a href="mailto:kazisadmansakib@gmail.com" class="contact-link">Email</a>
-    <a href="https://github.com/ssakib04" class="contact-link">GitHub</a>
-    <a href="https://www.linkedin.com/in/kajisadmansakib/" class="contact-link">LinkedIn</a>
-    <a href="https://www.hackerrank.com/profile/ssakib218" class="contact-link">HackerRank</a>
-    <a href="https://codeforces.com/profile/Shafat04" class="contact-link">Codeforces</a>
-  </section>
+  <!-- PROJECTS PAGE -->
+  <div class="page" id="projects">
+    <div class="back-btn" onclick="showPage('home')">←</div>
+    
+    <div class="content-bubble project-bubble bubble-1">
+      <h3>Spotify Clone</h3>
+      <p>Full-featured music streaming application with modern UI/UX design.</p>
+      <a href="https://github.com/ssakib04/Spotify-clone" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-2">
+      <h3>Snake Game</h3>
+      <p>Classic snake game implementation with smooth gameplay and scoring system.</p>
+      <a href="https://github.com/ssakib04/Snake-Game" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-3">
+      <h3>Linear Regression</h3>
+      <p>Machine learning model for predictive analysis using linear regression algorithms.</p>
+      <a href="https://github.com/ssakib04/Linear-Regression" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-4">
+      <h3>K-Means Segmentation</h3>
+      <p>Unsupervised learning implementation for data clustering and segmentation.</p>
+      <a href="https://github.com/ssakib04/K-Means-Segmentation" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-5">
+      <h3>Support Vector Machine</h3>
+      <p>Classification algorithm implementation with kernel methods and optimization.</p>
+      <a href="https://github.com/ssakib04/Support-Vector-Machine" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-6">
+      <h3>Hand Gesture Recognition</h3>
+      <p>Computer vision project using deep learning for real-time gesture detection.</p>
+      <a href="https://github.com/ssakib04/Hand-Gesture-Recognition" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-7">
+      <h3>More Projects</h3>
+      <p>Explore additional projects and contributions on my GitHub profile.</p>
+      <a href="https://github.com/ssakib04" target="_blank">View Profile</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-8">
+      <h3>Open Source</h3>
+      <p>Contributing to open source community with innovative solutions.</p>
+      <a href="https://github.com/ssakib04" target="_blank">See Contributions</a>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Kaji Sadman Sakib | All rights reserved.</p>
-  </footer>
+  <!-- EXPERIENCE PAGE -->
+  <div class="page" id="experience">
+    <div class="back-btn" onclick="showPage('home')">←</div>
+    
+    <div class="content-bubble experience-bubble" style="top: 20%; left: 20%; animation-delay: 0s;">
+      <h3>Prodigy InfoTech</h3>
+      <p><strong>Role:</strong> Machine Learning Intern</p>
+      <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
+      <p>Developed ML models and worked on data analysis projects. Gained hands-on experience with deep learning frameworks and real-world applications.</p>
+      <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
+    </div>
+    
+    <div class="content-bubble experience-bubble" style="top: 30%; right: 15%; animation-delay: 1s;">
+      <h3>BritSync Itl.</h3>
+      <p><strong>Role:</strong> Web Development Intern</p>
+      <p><strong>Duration:</strong> Feb 2024 - Jun 2024</p>
+      <p>Built responsive web applications and enhanced user experience. Worked with modern web technologies and collaborative development practices.</p>
+      <a href="https://britsync.co.uk/" target="_blank">Visit Website</a>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div class="page" id="contact">
+    <div class="back-btn" onclick="showPage('home')">←</div>
+    
+    <div class="content-bubble contact-bubble bubble-1">
+      <a href="mailto:kazisadmansakib@gmail.com" style="color: #000; text-decoration: none;">
+        <strong>Email</strong><br>
+        Get in touch
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-2">
+      <a href="https://github.com/ssakib04" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>GitHub</strong><br>
+        Code & Projects
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-3">
+      <a href="https://www.linkedin.com/in/kajisadmansakib/" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>LinkedIn</strong><br>
+        Professional Network
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-4">
+      <a href="https://www.hackerrank.com/profile/ssakib218" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>HackerRank</strong><br>
+        Coding Skills
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-5">
+      <a href="https://codeforces.com/profile/Shafat04" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>Codeforces</strong><br>
+        Competitive Programming
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show selected page
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
