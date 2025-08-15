@@ -134,8 +134,9 @@
     }
 
     .nav-bubble:nth-child(3) {
-      bottom: 5%;
-      left: calc(50% - 480px);
+      top: 50%;
+      left: calc(50% + 400px);
+      transform: translateY(-50%);
       animation-delay: 2s;
     }
 
@@ -146,10 +147,13 @@
     }
 
     .nav-bubble:nth-child(5) {
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 15%;
+      left: calc(50% + 100px);
       animation-delay: 0.5s;
+      width: 176px; /* Half of 352px */
+      height: 176px; /* Half of 352px */
+      font-size: 1.05rem; /* Half of 2.1rem */
+      z-index: 20;
     }
 
     /* CONTENT BUBBLES - Base styles */
@@ -614,7 +618,7 @@
   <div class="page" id="experience">
     <div class="back-btn" onclick="showPage('home')">←</div>
     
-    <div class="content-bubble experience-bubble" style="top: 20%; left: calc(50% - 480px); animation-delay: 0s;">
+    <div class="content-bubble experience-bubble" style="top: 15%; left: calc(50% - 320px); animation-delay: 0s;">
       <h3>Prodigy InfoTech</h3>
       <p><strong>Role:</strong> Machine Learning Intern</p>
       <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
@@ -622,7 +626,7 @@
       <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
     </div>
     
-    <div class="content-bubble experience-bubble" style="top: 20%; right: calc(50% - 480px); animation-delay: 1s;">
+    <div class="content-bubble experience-bubble" style="bottom: 15%; right: calc(50% - 320px); animation-delay: 1s;">
       <h3>BritSync Itl.</h3>
       <p><strong>Role:</strong> Web Development Intern</p>
       <p><strong>Duration:</strong> Feb 2024 - Jun 2024</p>
