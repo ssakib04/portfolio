@@ -41,18 +41,19 @@
       display: block;
     }
 
-    /* Clearer backgrounds for projects and experience pages */
+    /* Specific background for projects page */
     #projects {
       background: url('images/background2.jpg') center center fixed,
-                  linear-gradient(-45deg, rgba(10,10,10,0.3), rgba(26,26,26,0.3), rgba(42,42,42,0.3), rgba(15,15,15,0.3));
+                  linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #0f0f0f);
       background-size: cover, 400% 400%;
       background-blend-mode: overlay;
       animation: gradientBG 15s ease infinite;
     }
 
+    /* Specific background for experience page */
     #experience {
       background: url('images/background3.jpg') center center fixed,
-                  linear-gradient(-45deg, rgba(10,10,10,0.3), rgba(26,26,26,0.3), rgba(42,42,42,0.3), rgba(15,15,15,0.3));
+                  linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #0f0f0f);
       background-size: cover, 400% 400%;
       background-blend-mode: overlay;
       animation: gradientBG 15s ease infinite;
@@ -91,11 +92,11 @@
       position: relative;
     }
 
-    /* NAVIGATION BUBBLES */
+    /* NAVIGATION BUBBLES - Resized to 0.4x (half of 0.8x) */
     .nav-bubble {
       position: absolute;
-      width: 176px;
-      height: 176px;
+      width: 176px; /* 352 / 2 */
+      height: 176px; /* 352 / 2 */
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(15px);
@@ -106,7 +107,7 @@
       color: #000;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.05rem;
+      font-size: 1.05rem; /* 2.1 / 2 */
       transition: all 0.3s ease;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       animation: float 4s ease-in-out infinite;
@@ -119,36 +120,40 @@
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
     }
 
-    /* Better positioned nav bubbles */
+    /* Centered distribution around the viewport with proper spacing */
     .nav-bubble:nth-child(1) {
-      top: 10%;
-      left: 15%;
+      top: 5%;
+      left: calc(50% - 480px);
       animation-delay: 0s;
     }
 
     .nav-bubble:nth-child(2) {
-      top: 10%;
-      right: 15%;
+      top: 5%;
+      right: calc(50% - 480px);
       animation-delay: 1s;
     }
 
     .nav-bubble:nth-child(3) {
       top: 50%;
-      right: 5%;
+      left: calc(50% + 400px);
       transform: translateY(-50%);
       animation-delay: 2s;
     }
 
     .nav-bubble:nth-child(4) {
-      bottom: 10%;
-      right: 15%;
+      bottom: 5%;
+      right: calc(50% - 480px);
       animation-delay: 3s;
     }
 
     .nav-bubble:nth-child(5) {
-      bottom: 10%;
-      left: 15%;
+      top: 15%;
+      left: calc(50% + 100px);
       animation-delay: 0.5s;
+      width: 176px; /* Half of 352px */
+      height: 176px; /* Half of 352px */
+      font-size: 1.05rem; /* Half of 2.1rem */
+      z-index: 20;
     }
 
     /* CONTENT BUBBLES - Base styles */
@@ -168,7 +173,7 @@
       transition: all 0.4s ease;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
       animation: float 6s ease-in-out infinite;
-      padding: 0.6rem;
+      padding: 0.6rem; /* 1.2 / 2 */
       text-align: center;
       overflow: hidden;
     }
@@ -179,137 +184,79 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
-    /* ABOUT PAGE BUBBLES */
+    /* ABOUT PAGE BUBBLES - Resized to 0.4x */
     .about-bubble {
-      width: 224px;
-      height: 224px;
-      font-size: 0.88rem;
+      width: 224px; /* 448 / 2 */
+      height: 224px; /* 448 / 2 */
+      font-size: 0.88rem; /* 1.76 / 2 */
       line-height: 1.5;
     }
 
     .about-image-bubble {
-      width: 256px;
-      height: 256px;
-      padding: 0;
+      width: 256px; /* 512 / 2 */
+      height: 256px; /* 512 / 2 */
     }
 
     .about-image-bubble img {
-      width: 100%;
-      height: 100%;
+      width: 160px; /* 320 / 2 */
+      height: 160px; /* 320 / 2 */
       border-radius: 50%;
       object-fit: cover;
     }
 
-    /* PROJECT CARDS - Replace bubbles with modern cards */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      min-height: calc(100vh - 4rem);
-      align-items: start;
-      padding-top: 6rem;
+    /* PROJECT BUBBLES - Resized to 0.8x */
+    .project-bubble {
+      width: 448px; /* 560 * 0.8 */
+      height: 448px; /* 560 * 0.8 */
+      font-size: 1.6rem; /* 2 * 0.8 */
+      line-height: 1.4;
     }
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 3rem;
-    }
-
-    .project-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #000;
+    .project-bubble h3 {
+      font-size: 2.08rem; /* 2.6 * 0.8 */
+      margin-bottom: 1.28rem; /* 1.6 * 0.8 */
       font-weight: 600;
     }
 
-    .project-card p {
-      font-size: 1rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .github-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(45deg, #333, #555);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 12px;
+    .project-bubble a {
+      color: #000;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.96rem 1.92rem; /* 1.2 * 0.8, 2.4 * 0.8 */
+      border-radius: 16px; /* 20 * 0.8 */
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      margin-top: 1.6rem; /* 2 * 0.8 */
+      font-size: 1.44rem; /* 1.8 * 0.8 */
       transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
     }
 
-    .github-btn:hover {
-      background: linear-gradient(45deg, #444, #666);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    .project-bubble a:hover {
+      background: rgba(255, 255, 255, 0.5);
     }
 
-    .github-btn::before {
-      content: "⭐";
-      font-size: 1.1rem;
-    }
-
-    /* EXPERIENCE BUBBLES - Smaller and evenly spaced */
+    /* EXPERIENCE BUBBLES - Resized to 0.8x */
     .experience-bubble {
-      width: 320px;
-      height: 320px;
-      font-size: 1rem;
+      width: 640px; /* 800 * 0.8 */
+      height: 640px; /* 800 * 0.8 */
+      font-size: 1.76rem; /* 2.2 * 0.8 */
       line-height: 1.6;
     }
 
     .experience-bubble h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
+      font-size: 2.56rem; /* 3.2 * 0.8 */
+      margin-bottom: 1.92rem; /* 2.4 * 0.8 */
       font-weight: 600;
     }
 
     .experience-bubble a {
       color: #000;
       background: rgba(255, 255, 255, 0.3);
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
+      padding: 1.28rem 2.4rem; /* 1.6 * 0.8, 3 * 0.8 */
+      border-radius: 19.2px; /* 24 * 0.8 */
       text-decoration: none;
       font-weight: 600;
-      margin-top: 1rem;
-      font-size: 0.9rem;
+      margin-top: 2.4rem; /* 3 * 0.8 */
+      font-size: 1.6rem; /* 2 * 0.8 */
       transition: all 0.3s ease;
     }
 
@@ -317,11 +264,11 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-    /* CONTACT BUBBLES - Better spacing */
+    /* CONTACT BUBBLES - Resized to 0.8x */
     .contact-bubble {
-      width: 200px;
-      height: 200px;
-      font-size: 1rem;
+      width: 384px; /* 480 * 0.8 */
+      height: 384px; /* 480 * 0.8 */
+      font-size: 1.76rem; /* 2.2 * 0.8 */
       font-weight: 600;
     }
 
@@ -364,124 +311,78 @@
       50% { transform: translateY(-15px); }
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* BETTER POSITIONED BUBBLES - Non-overlapping */
+    /* BUBBLE POSITIONS - Updated with better spacing to prevent overlap */
     .bubble-1 { 
-      top: 15%; 
-      left: 10%; 
+      top: 8%; 
+      left: calc(50% - 560px); 
       animation-delay: 0s; 
     }
     .bubble-2 { 
-      top: 15%; 
-      right: 10%; 
+      top: 8%; 
+      right: calc(50% - 560px); 
       animation-delay: 0.5s; 
     }
     .bubble-3 { 
       top: 50%; 
-      left: 5%; 
+      left: calc(50% - 720px); 
       transform: translateY(-50%);
       animation-delay: 1s; 
     }
     .bubble-4 { 
       top: 50%; 
-      right: 5%; 
+      right: calc(50% - 720px); 
       transform: translateY(-50%);
       animation-delay: 1.5s; 
     }
     .bubble-5 { 
-      bottom: 15%; 
-      left: 10%; 
+      bottom: 8%; 
+      left: calc(50% - 560px); 
       animation-delay: 2s; 
     }
     .bubble-6 { 
-      bottom: 15%; 
-      right: 10%; 
+      bottom: 8%; 
+      right: calc(50% - 560px); 
       animation-delay: 2.5s; 
     }
     .bubble-7 { 
-      top: 30%; 
-      left: 30%; 
+      top: 28%; 
+      left: calc(50% - 224px); 
       animation-delay: 3s; 
     }
     .bubble-8 { 
-      bottom: 30%; 
-      right: 30%; 
+      bottom: 28%; 
+      right: calc(50% - 224px); 
       animation-delay: 3.5s; 
     }
 
-    /* Experience page specific positioning */
-    .exp-bubble-1 {
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation-delay: 0s;
-    }
-    
-    .exp-bubble-2 {
-      top: 50%;
-      left: 20%;
-      transform: translateY(-50%);
-      animation-delay: 1s;
-    }
-    
-    .exp-bubble-3 {
-      top: 50%;
-      right: 20%;
-      transform: translateY(-50%);
-      animation-delay: 2s;
-    }
-
-    /* Contact page specific positioning */
-    .contact-bubble-1 { top: 20%; left: 20%; }
-    .contact-bubble-2 { top: 20%; right: 20%; }
-    .contact-bubble-3 { bottom: 30%; left: 50%; transform: translateX(-50%); }
-    .contact-bubble-4 { bottom: 30%; left: 15%; }
-    .contact-bubble-5 { bottom: 30%; right: 15%; }
-
-    /* Animation delays for project cards */
-    .project-card:nth-child(1) { animation-delay: 0.1s; }
-    .project-card:nth-child(2) { animation-delay: 0.2s; }
-    .project-card:nth-child(3) { animation-delay: 0.3s; }
-    .project-card:nth-child(4) { animation-delay: 0.4s; }
-    .project-card:nth-child(5) { animation-delay: 0.5s; }
-    .project-card:nth-child(6) { animation-delay: 0.6s; }
-    .project-card:nth-child(7) { animation-delay: 0.7s; }
-    .project-card:nth-child(8) { animation-delay: 0.8s; }
-
-    /* RESPONSIVE DESIGN */
+    /* RESPONSIVE */
     @media (max-width: 1200px) {
-      .main-title {
-        font-size: 3.5rem;
+      .nav-bubble {
+        width: 144px; /* 180 * 0.8 */
+        height: 144px; /* 180 * 0.8 */
+        font-size: 0.88rem; /* 1.1 * 0.8 */
       }
       
-      .projects-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
+      .about-bubble, .project-bubble {
+        width: 176px; /* 220 * 0.8 */
+        height: 176px; /* 220 * 0.8 */
+        font-size: 0.72rem; /* 0.9 * 0.8 */
       }
       
       .experience-bubble {
-        width: 280px;
-        height: 280px;
-        font-size: 0.9rem;
+        width: 256px; /* 320 * 0.8 */
+        height: 256px; /* 320 * 0.8 */
+        font-size: 0.8rem; /* 1 * 0.8 */
       }
       
-      .nav-bubble {
-        width: 150px;
-        height: 150px;
-        font-size: 0.95rem;
+      .contact-bubble {
+        width: 160px; /* 200 * 0.8 */
+        height: 160px; /* 200 * 0.8 */
       }
     }
 
@@ -496,98 +397,66 @@
         padding: 0 1rem;
       }
 
-      .projects-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
-        padding-top: 5rem;
-      }
-
-      .project-card {
-        padding: 1.5rem;
-      }
-
       .nav-bubble {
-        width: 120px;
-        height: 120px;
-        font-size: 0.8rem;
+        width: 112px; /* 140 * 0.8 */
+        height: 112px; /* 140 * 0.8 */
+        font-size: 0.72rem; /* 0.9 * 0.8 */
       }
 
-      .nav-bubble:nth-child(1) { top: 10%; left: 5%; }
-      .nav-bubble:nth-child(2) { top: 10%; right: 5%; }
-      .nav-bubble:nth-child(3) { top: 50%; right: 2%; }
-      .nav-bubble:nth-child(4) { bottom: 10%; right: 5%; }
-      .nav-bubble:nth-child(5) { bottom: 10%; left: 5%; }
+      .nav-bubble:nth-child(1) { top: 10%; left: 3%; }
+      .nav-bubble:nth-child(2) { top: 15%; right: 3%; }
+      .nav-bubble:nth-child(3) { bottom: 30%; left: 2%; }
+      .nav-bubble:nth-child(4) { bottom: 10%; right: 2%; }
+      .nav-bubble:nth-child(5) { top: 55%; left: 1%; }
 
-      .about-bubble {
-        width: 160px;
-        height: 160px;
-        font-size: 0.7rem;
+      .content-bubble {
+        font-size: 0.64rem; /* 0.8 * 0.8 */
+        padding: 0.8rem; /* 1 * 0.8 */
+      }
+
+      .about-bubble, .project-bubble {
+        width: 128px; /* 160 * 0.8 */
+        height: 128px; /* 160 * 0.8 */
+        font-size: 0.6rem; /* 0.75 * 0.8 */
+        line-height: 1.3;
       }
 
       .about-image-bubble {
-        width: 180px;
-        height: 180px;
+        width: 160px; /* 200 * 0.8 */
+        height: 160px; /* 200 * 0.8 */
+      }
+
+      .about-image-bubble img {
+        width: 96px; /* 120 * 0.8 */
+        height: 96px; /* 120 * 0.8 */
       }
 
       .experience-bubble {
-        width: 220px;
-        height: 220px;
-        font-size: 0.8rem;
+        width: 192px; /* 240 * 0.8 */
+        height: 192px; /* 240 * 0.8 */
+        font-size: 0.68rem; /* 0.85 * 0.8 */
       }
 
       .experience-bubble h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
+        font-size: 0.96rem; /* 1.2 * 0.8 */
+        margin-bottom: 0.64rem; /* 0.8 * 0.8 */
       }
 
       .contact-bubble {
-        width: 140px;
-        height: 140px;
-        font-size: 0.8rem;
+        width: 112px; /* 140 * 0.8 */
+        height: 112px; /* 140 * 0.8 */
+        font-size: 0.72rem; /* 0.9 * 0.8 */
       }
 
-      /* Mobile positioning for about page */
-      #about .bubble-1, #about .bubble-2, #about .bubble-3, #about .bubble-4, 
-      #about .bubble-5, #about .bubble-6, #about .bubble-7, #about .bubble-8 {
-        position: static;
-        margin: 1rem auto;
-        display: block;
-      }
-
-      #about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 6rem;
-      }
-
-      #experience .exp-bubble-1, #experience .exp-bubble-2, #experience .exp-bubble-3 {
-        position: static;
-        transform: none;
-        margin: 1.5rem auto;
-      }
-
-      #experience {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 6rem;
-      }
-
-      #contact .contact-bubble-1, #contact .contact-bubble-2, #contact .contact-bubble-3, 
-      #contact .contact-bubble-4, #contact .contact-bubble-5 {
-        position: static;
-        transform: none;
-        margin: 1rem auto;
-      }
-
-      #contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 6rem;
-      }
+      /* Mobile bubble positions - adjusted for smaller bubbles */
+      .bubble-1 { top: 8%; left: 5%; }
+      .bubble-2 { top: 12%; right: 3%; }
+      .bubble-3 { top: 50%; left: 1%; }
+      .bubble-4 { top: 70%; right: 8%; }
+      .bubble-5 { bottom: 25%; left: 15%; }
+      .bubble-6 { bottom: 8%; right: 2%; }
+      .bubble-7 { top: 30%; left: 25%; }
+      .bubble-8 { bottom: 40%; right: 20%; }
     }
 
     @media (max-width: 480px) {
@@ -599,69 +468,43 @@
         font-size: 1.1rem;
       }
 
-      .project-card {
-        padding: 1rem;
-      }
-
-      .project-card img {
-        height: 150px;
-        font-size: 2rem;
-      }
-
       .nav-bubble {
-        width: 90px;
-        height: 90px;
-        font-size: 0.7rem;
+        width: 80px; /* 100 * 0.8 */
+        height: 80px; /* 100 * 0.8 */
+        font-size: 0.6rem; /* 0.75 * 0.8 */
       }
 
-      .about-bubble {
-        width: 120px;
-        height: 120px;
-        font-size: 0.6rem;
+      .about-bubble, .project-bubble {
+        width: 96px; /* 120 * 0.8 */
+        height: 96px; /* 120 * 0.8 */
+        font-size: 0.52rem; /* 0.65 * 0.8 */
       }
 
       .about-image-bubble {
-        width: 140px;
-        height: 140px;
+        width: 112px; /* 140 * 0.8 */
+        height: 112px; /* 140 * 0.8 */
+      }
+
+      .about-image-bubble img {
+        width: 64px; /* 80 * 0.8 */
+        height: 64px; /* 80 * 0.8 */
       }
 
       .experience-bubble {
-        width: 180px;
-        height: 180px;
-        font-size: 0.7rem;
+        width: 144px; /* 180 * 0.8 */
+        height: 144px; /* 180 * 0.8 */
+        font-size: 0.56rem; /* 0.7 * 0.8 */
       }
 
       .contact-bubble {
-        width: 100px;
-        height: 100px;
-        font-size: 0.7rem;
+        width: 80px; /* 100 * 0.8 */
+        height: 80px; /* 100 * 0.8 */
+        font-size: 0.6rem; /* 0.75 * 0.8 */
       }
-    }
 
-    /* Accessibility improvements */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* Focus styles for keyboard navigation */
-    .nav-bubble:focus,
-    .content-bubble:focus,
-    .back-btn:focus,
-    .github-btn:focus {
-      outline: 2px solid #fff;
-      outline-offset: 2px;
-    }
-
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-      .nav-bubble,
-      .content-bubble,
-      .project-card {
-        border: 2px solid #fff;
+      .project-bubble a, .experience-bubble a {
+        padding: 0.32rem 0.64rem; /* 0.4 * 0.8, 0.8 * 0.8 */
+        font-size: 0.56rem; /* 0.7 * 0.8 */
       }
     }
   </style>
@@ -670,11 +513,11 @@
   <!-- HOME PAGE -->
   <div class="page active" id="home">
     <div class="home-container">
-      <div class="nav-bubble" onclick="showPage('about')" tabindex="0" role="button" aria-label="Navigate to About page">About</div>
-      <div class="nav-bubble" onclick="showPage('projects')" tabindex="0" role="button" aria-label="Navigate to Projects page">Projects</div>
-      <div class="nav-bubble" onclick="showPage('experience')" tabindex="0" role="button" aria-label="Navigate to Experience page">Experience</div>
-      <div class="nav-bubble" onclick="showPage('contact')" tabindex="0" role="button" aria-label="Navigate to Contact page">Contact</div>
-      <div class="nav-bubble" onclick="showPage('home')" tabindex="0" role="button" aria-label="Stay on Home page">Home</div>
+      <div class="nav-bubble" onclick="showPage('about')">About</div>
+      <div class="nav-bubble" onclick="showPage('projects')">Projects</div>
+      <div class="nav-bubble" onclick="showPage('experience')">Experience</div>
+      <div class="nav-bubble" onclick="showPage('contact')">Contact</div>
+      <div class="nav-bubble" onclick="showPage('home')">Home</div>
       
       <h1 class="main-title">Kaji Sadman Sakib</h1>
       <p class="main-subtitle">Machine Learning Engineer | <span style="color: #fff;">Research Enthusiast | Web Developer</span></p>
@@ -683,10 +526,10 @@
 
   <!-- ABOUT PAGE -->
   <div class="page" id="about">
-    <div class="back-btn" tabindex="0" role="button" aria-label="Go back to home">←</div>
+    <div class="back-btn" onclick="showPage('home')">←</div>
     
     <div class="content-bubble about-image-bubble bubble-1">
-      <img src="images/profile.jpg" alt="Kaji Sadman Sakib Profile Picture">
+      <img src="images/profile.jpg" alt="Kaji Sadman Sakib" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
     </div>
     
     <div class="content-bubble about-bubble bubble-2">
@@ -720,96 +563,131 @@
 
   <!-- PROJECTS PAGE -->
   <div class="page" id="projects">
-    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Go back to home">←</div>
+    <div class="back-btn" onclick="showPage('home')">←</div>
     
-    <div class="projects-container">
-      <div class="project-card">
-        <div class="project-card img">🎵</div>
-        <h3>Spotify Clone</h3>
-        <p>Full-featured music streaming application with modern UI/UX design and responsive layout.</p>
-        <a href="https://github.com/ssakib04/Spotify-clone" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">🐍</div>
-        <h3>Snake Game</h3>
-        <p>Classic snake game implementation with smooth gameplay mechanics and scoring system.</p>
-        <a href="https://github.com/ssakib04/Snake-Game" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">📈</div>
-        <h3>Linear Regression</h3>
-        <p>Machine learning model for predictive analysis using linear regression algorithms.</p>
-        <a href="https://github.com/ssakib04/Linear-Regression" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">🔍</div>
-        <h3>K-Means Segmentation</h3>
-        <p>Unsupervised learning implementation for data clustering and market segmentation.</p>
-        <a href="https://github.com/ssakib04/K-Means-Segmentation" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">⚡</div>
-        <h3>Support Vector Machine</h3>
-        <p>Classification algorithm implementation with kernel methods and optimization techniques.</p>
-        <a href="https://github.com/ssakib04/Support-Vector-Machine" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">👋</div>
-        <h3>Hand Gesture Recognition</h3>
-        <p>Computer vision project using deep learning for real-time gesture detection and recognition.</p>
-        <a href="https://github.com/ssakib04/Hand-Gesture-Recognition" target="_blank" class="github-btn" rel="noopener noreferrer">Open in GitHub</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">💻</div>
-        <h3>More Projects</h3>
-        <p>Explore additional projects and open source contributions on my GitHub profile.</p>
-        <a href="https://github.com/ssakib04" target="_blank" class="github-btn" rel="noopener noreferrer">View Profile</a>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-card img">🚀</div>
-        <h3>Open Source</h3>
-        <p>Contributing to the open source community with innovative solutions and collaborative development.</p>
-        <a href="https://github.com/ssakib04" target="_blank" class="github-btn" rel="noopener noreferrer">See Contributions</a>
-      </div>
+    <div class="content-bubble project-bubble bubble-1">
+      <h3>Spotify Clone</h3>
+      <p>Full-featured music streaming application with modern UI/UX design.</p>
+      <a href="https://github.com/ssakib04/Spotify-clone" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-2">
+      <h3>Snake Game</h3>
+      <p>Classic snake game implementation with smooth gameplay and scoring system.</p>
+      <a href="https://github.com/ssakib04/Snake-Game" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-3">
+      <h3>Linear Regression</h3>
+      <p>Machine learning model for predictive analysis using linear regression algorithms.</p>
+      <a href="https://github.com/ssakib04/Linear-Regression" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-4">
+      <h3>K-Means Segmentation</h3>
+      <p>Unsupervised learning implementation for data clustering and segmentation.</p>
+      <a href="https://github.com/ssakib04/K-Means-Segmentation" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-5">
+      <h3>Support Vector Machine</h3>
+      <p>Classification algorithm implementation with kernel methods and optimization.</p>
+      <a href="https://github.com/ssakib04/Support-Vector-Machine" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-6">
+      <h3>Hand Gesture Recognition</h3>
+      <p>Computer vision project using deep learning for real-time gesture detection.</p>
+      <a href="https://github.com/ssakib04/Hand-Gesture-Recognition" target="_blank">View on GitHub</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-7">
+      <h3>More Projects</h3>
+      <p>Explore additional projects and contributions on my GitHub profile.</p>
+      <a href="https://github.com/ssakib04" target="_blank">View Profile</a>
+    </div>
+    
+    <div class="content-bubble project-bubble bubble-8">
+      <h3>Open Source</h3>
+      <p>Contributing to open source community with innovative solutions.</p>
+      <a href="https://github.com/ssakib04" target="_blank">See Contributions</a>
     </div>
   </div>
 
   <!-- EXPERIENCE PAGE -->
   <div class="page" id="experience">
-    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Go back to home">←</div>
+    <div class="back-btn" onclick="showPage('home')">←</div>
     
-    <div class="content-bubble experience-bubble exp-bubble-1">
+    <div class="content-bubble experience-bubble" style="top: 15%; left: calc(50% - 320px); animation-delay: 0s;">
       <h3>Prodigy InfoTech</h3>
       <p><strong>Role:</strong> Machine Learning Intern</p>
       <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
-      <p>Developed ML models and worked on data analysis projects. Gained hands-on experience with deep learning frameworks.</p>
-      <a href="https://prodigyinfotech.dev" target="_blank" rel="noopener noreferrer">Visit Website</a>
+      <p>Developed ML models and worked on data analysis projects. Gained hands-on experience with deep learning frameworks and real-world applications.</p>
+      <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
     </div>
     
-    <div class="content-bubble experience-bubble exp-bubble-2">
+    <div class="content-bubble experience-bubble" style="bottom: 15%; right: calc(50% - 320px); animation-delay: 1s;">
       <h3>BritSync Itl.</h3>
       <p><strong>Role:</strong> Web Development Intern</p>
       <p><strong>Duration:</strong> Feb 2024 - Jun 2024</p>
-      <p>Built responsive web applications and enhanced user experience with modern technologies.</p>
-      <a href="https://britsync.co.uk/" target="_blank" rel="noopener noreferrer">Visit Website</a>
-    </div>
-    
-    <div class="content-bubble experience-bubble exp-bubble-3">
-      <h3>Freelance Developer</h3>
-      <p><strong>Role:</strong> Full Stack Developer</p>
-      <p><strong>Duration:</strong> 2023 - Present</p>
-      <p>Working on various web development and ML projects for clients worldwide.</p>
-      <a href="https://github.com/ssakib04" target="_blank" rel="noopener noreferrer">View Portfolio</a>
+      <p>Built responsive web applications and enhanced user experience. Worked with modern web technologies and collaborative development practices.</p>
+      <a href="https://britsync.co.uk/" target="_blank">Visit Website</a>
     </div>
   </div>
 
   <!-- CONTACT PAGE -->
   <div class="page" id="contact">
-    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Go back to home">←</div>
+    <div class="back-btn" onclick="showPage('home')">←</div>
+    
+    <div class="content-bubble contact-bubble bubble-1">
+      <a href="mailto:kazisadmansakib@gmail.com" style="color: #000; text-decoration: none;">
+        <strong>Email</strong><br>
+        Get in touch
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-2">
+      <a href="https://github.com/ssakib04" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>GitHub</strong><br>
+        Code & Projects
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-3">
+      <a href="https://www.linkedin.com/in/kajisadmansakib/" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>LinkedIn</strong><br>
+        Professional Network
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-4">
+      <a href="https://www.hackerrank.com/profile/ssakib218" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>HackerRank</strong><br>
+        Coding Skills
+      </a>
+    </div>
+    
+    <div class="content-bubble contact-bubble bubble-5">
+      <a href="https://codeforces.com/profile/Shafat04" target="_blank" style="color: #000; text-decoration: none;">
+        <strong>Codeforces</strong><br>
+        Competitive Programming
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show selected page
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
+
