@@ -364,9 +364,11 @@
       50% { transform: translateY(-15px); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes fadeInUp {
@@ -681,7 +683,7 @@
 
   <!-- ABOUT PAGE -->
   <div class="page" id="about">
-    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Go back to home">←</div>
+    <div class="back-btn" tabindex="0" role="button" aria-label="Go back to home">←</div>
     
     <div class="content-bubble about-image-bubble bubble-1">
       <img src="images/profile.jpg" alt="Kaji Sadman Sakib Profile Picture">
