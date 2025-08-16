@@ -14,20 +14,11 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('images/background.jpg') center center fixed,
-                  linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #0f0f0f);
-      background-size: cover, 400% 400%;
-      background-blend-mode: overlay;
-      animation: gradientBG 15s ease infinite;
+      background: url('images/background.jpg') center center fixed;
+      background-size: cover;
       color: #000;
       overflow-x: hidden;
       min-height: 100vh;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     .page {
@@ -43,20 +34,14 @@
 
     /* Specific background for projects page */
     #projects {
-      background: url('images/background2.jpg') center center fixed,
-                  linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #0f0f0f);
-      background-size: cover, 400% 400%;
-      background-blend-mode: overlay;
-      animation: gradientBG 15s ease infinite;
+      background: url('images/background2.jpg') center center fixed;
+      background-size: cover;
     }
 
     /* Specific background for experience page */
     #experience {
-      background: url('images/background3.jpg') center center fixed,
-                  linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #0f0f0f);
-      background-size: cover, 400% 400%;
-      background-blend-mode: overlay;
-      animation: gradientBG 15s ease infinite;
+      background: url('images/background3.jpg') center center fixed;
+      background-size: cover;
     }
 
     /* HOME PAGE STYLES */
@@ -92,11 +77,11 @@
       position: relative;
     }
 
-    /* NAVIGATION BUBBLES - Resized to 0.4x (half of 0.8x) */
+    /* NAVIGATION BUBBLES */
     .nav-bubble {
       position: absolute;
-      width: 176px; /* 352 / 2 */
-      height: 176px; /* 352 / 2 */
+      width: 176px;
+      height: 176px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(15px);
@@ -107,56 +92,28 @@
       color: #000;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.05rem; /* 2.1 / 2 */
+      font-size: 1.05rem;
       transition: all 0.3s ease;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       animation: float 4s ease-in-out infinite;
       cursor: pointer;
+      user-select: none;
     }
 
-    .nav-bubble:hover {
+    .nav-bubble:hover, .nav-bubble:focus {
       transform: scale(1.05) translateY(-5px);
       background: rgba(255, 255, 255, 0.2);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      outline: none;
     }
 
-    /* Centered distribution around the viewport with proper spacing */
-    .nav-bubble:nth-child(1) {
-      top: 5%;
-      left: calc(50% - 480px);
-      animation-delay: 0s;
-    }
+    .nav-bubble:nth-child(1) { top: 5%; left: calc(50% - 480px); animation-delay: 0s; }
+    .nav-bubble:nth-child(2) { top: 5%; right: calc(50% - 480px); animation-delay: 1s; }
+    .nav-bubble:nth-child(3) { top: 50%; left: calc(50% + 400px); transform: translateY(-50%); animation-delay: 2s; }
+    .nav-bubble:nth-child(4) { bottom: 5%; right: calc(50% - 480px); animation-delay: 3s; }
+    .nav-bubble:nth-child(5) { top: 15%; left: calc(50% + 100px); animation-delay: 0.5s; width: 176px; height: 176px; font-size: 1.05rem; z-index: 20; }
 
-    .nav-bubble:nth-child(2) {
-      top: 5%;
-      right: calc(50% - 480px);
-      animation-delay: 1s;
-    }
-
-    .nav-bubble:nth-child(3) {
-      top: 50%;
-      left: calc(50% + 400px);
-      transform: translateY(-50%);
-      animation-delay: 2s;
-    }
-
-    .nav-bubble:nth-child(4) {
-      bottom: 5%;
-      right: calc(50% - 480px);
-      animation-delay: 3s;
-    }
-
-    .nav-bubble:nth-child(5) {
-      top: 15%;
-      left: calc(50% + 100px);
-      animation-delay: 0.5s;
-      width: 176px; /* Half of 352px */
-      height: 176px; /* Half of 352px */
-      font-size: 1.05rem; /* Half of 2.1rem */
-      z-index: 20;
-    }
-
-    /* CONTENT BUBBLES - Base styles */
+    /* CONTENT BUBBLES */
     .content-bubble {
       position: absolute;
       border-radius: 50%;
@@ -173,107 +130,153 @@
       transition: all 0.4s ease;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
       animation: float 6s ease-in-out infinite;
-      padding: 0.6rem; /* 1.2 / 2 */
+      padding: 0.6rem;
       text-align: center;
       overflow: hidden;
     }
 
-    .content-bubble:hover {
+    .content-bubble:hover, .content-bubble:focus {
       transform: scale(1.05) translateY(-8px);
       background: rgba(255, 255, 255, 0.18);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      outline: none;
     }
 
-    /* ABOUT PAGE BUBBLES - Resized to 0.4x */
+    /* ABOUT PAGE BUBBLES */
     .about-bubble {
-      width: 224px; /* 448 / 2 */
-      height: 224px; /* 448 / 2 */
-      font-size: 0.88rem; /* 1.76 / 2 */
+      width: 224px;
+      height: 224px;
+      font-size: 0.88rem;
       line-height: 1.5;
     }
 
     .about-image-bubble {
-      width: 256px; /* 512 / 2 */
-      height: 256px; /* 512 / 2 */
+      width: 256px;
+      height: 256px;
     }
 
     .about-image-bubble img {
-      width: 160px; /* 320 / 2 */
-      height: 160px; /* 320 / 2 */
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    /* PROJECT BUBBLES - Resized to 0.8x */
-    .project-bubble {
-      width: 448px; /* 560 * 0.8 */
-      height: 448px; /* 560 * 0.8 */
-      font-size: 1.6rem; /* 2 * 0.8 */
-      line-height: 1.4;
-    }
-
-    .project-bubble h3 {
-      font-size: 2.08rem; /* 2.6 * 0.8 */
-      margin-bottom: 1.28rem; /* 1.6 * 0.8 */
-      font-weight: 600;
-    }
-
-    .project-bubble a {
-      color: #000;
-      background: rgba(255, 255, 255, 0.3);
-      padding: 0.96rem 1.92rem; /* 1.2 * 0.8, 2.4 * 0.8 */
-      border-radius: 16px; /* 20 * 0.8 */
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1.6rem; /* 2 * 0.8 */
-      font-size: 1.44rem; /* 1.8 * 0.8 */
+    /* PROJECT CARDS */
+    .project-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      margin: 1rem;
       transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
-    .project-bubble a:hover {
-      background: rgba(255, 255, 255, 0.5);
+    .project-card:hover, .project-card:focus {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      outline: none;
     }
 
-    /* EXPERIENCE BUBBLES - Resized to 0.8x */
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .project-card h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: linear-gradient(45deg, #000, #333);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card a:hover, .project-card a:focus {
+      background: linear-gradient(45deg, #333, #555);
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    /* EXPERIENCE BUBBLES */
     .experience-bubble {
-      width: 640px; /* 800 * 0.8 */
-      height: 640px; /* 800 * 0.8 */
-      font-size: 1.76rem; /* 2.2 * 0.8 */
+      width: 320px;
+      height: 320px;
+      font-size: 0.88rem;
       line-height: 1.6;
     }
 
     .experience-bubble h3 {
-      font-size: 2.56rem; /* 3.2 * 0.8 */
-      margin-bottom: 1.92rem; /* 2.4 * 0.8 */
+      font-size: 1.28rem;
+      margin-bottom: 0.96rem;
       font-weight: 600;
     }
 
     .experience-bubble a {
       color: #000;
       background: rgba(255, 255, 255, 0.3);
-      padding: 1.28rem 2.4rem; /* 1.6 * 0.8, 3 * 0.8 */
-      border-radius: 19.2px; /* 24 * 0.8 */
+      padding: 0.64rem 1.2rem;
+      border-radius: 9.6px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 2.4rem; /* 3 * 0.8 */
-      font-size: 1.6rem; /* 2 * 0.8 */
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
       transition: all 0.3s ease;
     }
 
-    .experience-bubble a:hover {
+    .experience-bubble a:hover, .experience-bubble a:focus {
       background: rgba(255, 255, 255, 0.5);
+      outline: none;
     }
 
-    /* CONTACT BUBBLES - Resized to 0.8x */
+    /* CONTACT BUBBLES */
     .contact-bubble {
-      width: 384px; /* 480 * 0.8 */
-      height: 384px; /* 480 * 0.8 */
-      font-size: 1.76rem; /* 2.2 * 0.8 */
+      width: 384px;
+      height: 384px;
+      font-size: 1.76rem;
       font-weight: 600;
     }
 
-    .contact-bubble:hover {
+    .contact-bubble:hover, .contact-bubble:focus {
       background: rgba(255, 255, 255, 0.25);
+      outline: none;
     }
 
     /* BACK BUTTON */
@@ -300,9 +303,10 @@
       cursor: pointer;
     }
 
-    .back-btn:hover {
+    .back-btn:hover, .back-btn:focus {
       transform: scale(1.1);
       background: rgba(255, 255, 255, 0.25);
+      outline: none;
     }
 
     /* ANIMATIONS */
@@ -311,79 +315,86 @@
       50% { transform: translateY(-15px); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* BUBBLE POSITIONS */
+    .bubble-1 { top: 10%; left: calc(50% - 600px); animation-delay: 0s; }
+    .bubble-2 { top: 10%; right: calc(50% - 600px); animation-delay: 0.5s; }
+    .bubble-3 { top: 50%; left: calc(50% - 600px); transform: translateY(-50%); animation-delay: 1s; }
+    .bubble-4 { top: 50%; right: calc(50% - 600px); transform: translateY(-50%); animation-delay: 1.5s; }
+    .bubble-5 { bottom: 10%; left: calc(50% - 600px); animation-delay: 2s; }
+    .bubble-6 { bottom: 10%; right: calc(50% - 600px); animation-delay: 2.5s; }
+    .bubble-7 { top: 30%; left: calc(50% - 200px); animation-delay: 3s; }
+    .bubble-8 { bottom: 30%; right: calc(50% - 200px); animation-delay: 3.5s; }
 
-    /* BUBBLE POSITIONS - Updated with better spacing to prevent overlap */
-    .bubble-1 { 
-      top: 8%; 
-      left: calc(50% - 560px); 
-      animation-delay: 0s; 
-    }
-    .bubble-2 { 
-      top: 8%; 
-      right: calc(50% - 560px); 
-      animation-delay: 0.5s; 
-    }
-    .bubble-3 { 
-      top: 50%; 
-      left: calc(50% - 720px); 
-      transform: translateY(-50%);
-      animation-delay: 1s; 
-    }
-    .bubble-4 { 
-      top: 50%; 
-      right: calc(50% - 720px); 
-      transform: translateY(-50%);
-      animation-delay: 1.5s; 
-    }
-    .bubble-5 { 
-      bottom: 8%; 
-      left: calc(50% - 560px); 
-      animation-delay: 2s; 
-    }
-    .bubble-6 { 
-      bottom: 8%; 
-      right: calc(50% - 560px); 
-      animation-delay: 2.5s; 
-    }
-    .bubble-7 { 
-      top: 28%; 
-      left: calc(50% - 224px); 
-      animation-delay: 3s; 
-    }
-    .bubble-8 { 
-      bottom: 28%; 
-      right: calc(50% - 224px); 
-      animation-delay: 3.5s; 
-    }
+    /* EXPERIENCE BUBBLE POSITIONS */
+    .exp-bubble-1 { top: 20%; left: calc(50% - 400px); animation-delay: 0s; }
+    .exp-bubble-2 { top: 20%; right: calc(50% - 400px); animation-delay: 0.5s; }
+    .exp-bubble-3 { bottom: 20%; left: calc(50%); transform: translateX(-50%); animation-delay: 1s; }
+
+    /* CONTACT BUBBLE POSITIONS */
+    .contact-bubble-1 { top: 20%; left: calc(50% - 600px); animation-delay: 0s; }
+    .contact-bubble-2 { top: 20%; right: calc(50% - 600px); animation-delay: 0.5s; }
+    .contact-bubble-3 { bottom: 20%; left: calc(50% - 600px); animation-delay: 1s; }
+    .contact-bubble-4 { bottom: 20%; right: calc(50% - 600px); animation-delay: 1.5s; }
+    .contact-bubble-5 { top: 50%; left: calc(50%); transform: translate(-50%, -50%); animation-delay: 2s; }
 
     /* RESPONSIVE */
     @media (max-width: 1200px) {
       .nav-bubble {
-        width: 144px; /* 180 * 0.8 */
-        height: 144px; /* 180 * 0.8 */
-        font-size: 0.88rem; /* 1.1 * 0.8 */
+        width: 144px;
+        height: 144px;
+        font-size: 0.88rem;
       }
       
-      .about-bubble, .project-bubble {
-        width: 176px; /* 220 * 0.8 */
-        height: 176px; /* 220 * 0.8 */
-        font-size: 0.72rem; /* 0.9 * 0.8 */
+      .about-bubble {
+        width: 176px;
+        height: 176px;
+        font-size: 0.72rem;
+      }
+      
+      .about-image-bubble {
+        width: 200px;
+        height: 200px;
       }
       
       .experience-bubble {
-        width: 256px; /* 320 * 0.8 */
-        height: 256px; /* 320 * 0.8 */
-        font-size: 0.8rem; /* 1 * 0.8 */
+        width: 256px;
+        height: 256px;
+        font-size: 0.8rem;
       }
       
       .contact-bubble {
-        width: 160px; /* 200 * 0.8 */
-        height: 160px; /* 200 * 0.8 */
+        width: 160px;
+        height: 160px;
+        font-size: 0.8rem;
       }
+
+      .project-card {
+        width: 250px;
+        height: 350px;
+      }
+
+      .project-card img {
+        height: 180px;
+      }
+
+      .bubble-1 { top: 10%; left: calc(50% - 400px); }
+      .bubble-2 { top: 10%; right: calc(50% - 400px); }
+      .bubble-3 { top: 50%; left: calc(50% - 500px); }
+      .bubble-4 { top: 50%; right: calc(50% - 500px); }
+      .bubble-5 { bottom: 10%; left: calc(50% - 400px); }
+      .bubble-6 { bottom: 10%; right: calc(50% - 400px); }
+      .bubble-7 { top: 30%; left: calc(50% - 150px); }
+      .bubble-8 { bottom: 30%; right: calc(50% - 150px); }
+
+      .exp-bubble-1 { top: 20%; left: calc(50% - 300px); }
+      .exp-bubble-2 { top: 20%; right: calc(50% - 300px); }
+      .exp-bubble-3 { bottom: 20%; left: calc(50%); }
+      
+      .contact-bubble-1 { top: 20%; left: calc(50% - 400px); }
+      .contact-bubble-2 { top: 20%; right: calc(50% - 400px); }
+      .contact-bubble-3 { bottom: 20%; left: calc(50% - 400px); }
+      .contact-bubble-4 { bottom: 20%; right: calc(50% - 400px); }
+      .contact-bubble-5 { top: 50%; left: calc(50%); }
     }
 
     @media (max-width: 768px) {
@@ -398,9 +409,9 @@
       }
 
       .nav-bubble {
-        width: 112px; /* 140 * 0.8 */
-        height: 112px; /* 140 * 0.8 */
-        font-size: 0.72rem; /* 0.9 * 0.8 */
+        width: 112px;
+        height: 112px;
+        font-size: 0.72rem;
       }
 
       .nav-bubble:nth-child(1) { top: 10%; left: 3%; }
@@ -409,46 +420,57 @@
       .nav-bubble:nth-child(4) { bottom: 10%; right: 2%; }
       .nav-bubble:nth-child(5) { top: 55%; left: 1%; }
 
-      .content-bubble {
-        font-size: 0.64rem; /* 0.8 * 0.8 */
-        padding: 0.8rem; /* 1 * 0.8 */
-      }
-
-      .about-bubble, .project-bubble {
-        width: 128px; /* 160 * 0.8 */
-        height: 128px; /* 160 * 0.8 */
-        font-size: 0.6rem; /* 0.75 * 0.8 */
+      .about-bubble {
+        width: 128px;
+        height: 128px;
+        font-size: 0.6rem;
         line-height: 1.3;
       }
 
       .about-image-bubble {
-        width: 160px; /* 200 * 0.8 */
-        height: 160px; /* 200 * 0.8 */
-      }
-
-      .about-image-bubble img {
-        width: 96px; /* 120 * 0.8 */
-        height: 96px; /* 120 * 0.8 */
+        width: 160px;
+        height: 160px;
       }
 
       .experience-bubble {
-        width: 192px; /* 240 * 0.8 */
-        height: 192px; /* 240 * 0.8 */
-        font-size: 0.68rem; /* 0.85 * 0.8 */
+        width: 192px;
+        height: 192px;
+        font-size: 0.68rem;
       }
 
       .experience-bubble h3 {
-        font-size: 0.96rem; /* 1.2 * 0.8 */
-        margin-bottom: 0.64rem; /* 0.8 * 0.8 */
+        font-size: 0.96rem;
+        margin-bottom: 0.64rem;
       }
 
       .contact-bubble {
-        width: 112px; /* 140 * 0.8 */
-        height: 112px; /* 140 * 0.8 */
-        font-size: 0.72rem; /* 0.9 * 0.8 */
+        width: 112px;
+        height: 112px;
+        font-size: 0.72rem;
       }
 
-      /* Mobile bubble positions - adjusted for smaller bubbles */
+      .project-card {
+        width: 200px;
+        height: 300px;
+      }
+
+      .project-card img {
+        height: 150px;
+      }
+
+      .project-card h3 {
+        font-size: 1.4rem;
+      }
+
+      .project-card p {
+        font-size: 0.8rem;
+      }
+
+      .project-card a {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+      }
+
       .bubble-1 { top: 8%; left: 5%; }
       .bubble-2 { top: 12%; right: 3%; }
       .bubble-3 { top: 50%; left: 1%; }
@@ -457,6 +479,16 @@
       .bubble-6 { bottom: 8%; right: 2%; }
       .bubble-7 { top: 30%; left: 25%; }
       .bubble-8 { bottom: 40%; right: 20%; }
+
+      .exp-bubble-1 { top: 20%; left: calc(50% - 200px); }
+      .exp-bubble-2 { top: 20%; right: calc(50% - 200px); }
+      .exp-bubble-3 { bottom: 20%; left: calc(50%); }
+      
+      .contact-bubble-1 { top: 20%; left: calc(50% - 200px); }
+      .contact-bubble-2 { top: 20%; right: calc(50% - 200px); }
+      .contact-bubble-3 { bottom: 20%; left: calc(50% - 200px); }
+      .contact-bubble-4 { bottom: 20%; right: calc(50% - 200px); }
+      .contact-bubble-5 { top: 50%; left: calc(50%); }
     }
 
     @media (max-width: 480px) {
@@ -469,43 +501,65 @@
       }
 
       .nav-bubble {
-        width: 80px; /* 100 * 0.8 */
-        height: 80px; /* 100 * 0.8 */
-        font-size: 0.6rem; /* 0.75 * 0.8 */
+        width: 80px;
+        height: 80px;
+        font-size: 0.6rem;
       }
 
-      .about-bubble, .project-bubble {
-        width: 96px; /* 120 * 0.8 */
-        height: 96px; /* 120 * 0.8 */
-        font-size: 0.52rem; /* 0.65 * 0.8 */
+      .about-bubble {
+        width: 96px;
+        height: 96px;
+        font-size: 0.52rem;
       }
 
       .about-image-bubble {
-        width: 112px; /* 140 * 0.8 */
-        height: 112px; /* 140 * 0.8 */
-      }
-
-      .about-image-bubble img {
-        width: 64px; /* 80 * 0.8 */
-        height: 64px; /* 80 * 0.8 */
+        width: 112px;
+        height: 112px;
       }
 
       .experience-bubble {
-        width: 144px; /* 180 * 0.8 */
-        height: 144px; /* 180 * 0.8 */
-        font-size: 0.56rem; /* 0.7 * 0.8 */
+        width: 144px;
+        height: 144px;
+        font-size: 0.56rem;
       }
 
       .contact-bubble {
-        width: 80px; /* 100 * 0.8 */
-        height: 80px; /* 100 * 0.8 */
-        font-size: 0.6rem; /* 0.75 * 0.8 */
+        width: 80px;
+        height: 80px;
+        font-size: 0.6rem;
       }
 
-      .project-bubble a, .experience-bubble a {
-        padding: 0.32rem 0.64rem; /* 0.4 * 0.8, 0.8 * 0.8 */
-        font-size: 0.56rem; /* 0.7 * 0.8 */
+      .project-card {
+        width: 160px;
+        height: 250px;
       }
+
+      .project-card img {
+        height: 120px;
+      }
+
+      .project-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .project-card p {
+        font-size: 0.7rem;
+      }
+
+      .project-card a {
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .exp-bubble-1 { top: 20%; left: calc(50% - 150px); }
+      .exp-bubble-2 { top: 20%; right: calc(50% - 150px); }
+      .exp-bubble-3 { bottom: 20%; left: calc(50%); }
+      
+      .contact-bubble-1 { top: 20%; left: calc(50% - 150px); }
+      .contact-bubble-2 { top: 20%; right: calc(50% - 150px); }
+      .contact-bubble-3 { bottom: 20%; left: calc(50% - 150px); }
+      .contact-bubble-4 { bottom: 20%; right: calc(50% - 150px); }
+      .contact-bubble-5 { top: 50%; left: calc(50%); }
     }
   </style>
 </head>
@@ -513,11 +567,11 @@
   <!-- HOME PAGE -->
   <div class="page active" id="home">
     <div class="home-container">
-      <div class="nav-bubble" onclick="showPage('about')">About</div>
-      <div class="nav-bubble" onclick="showPage('projects')">Projects</div>
-      <div class="nav-bubble" onclick="showPage('experience')">Experience</div>
-      <div class="nav-bubble" onclick="showPage('contact')">Contact</div>
-      <div class="nav-bubble" onclick="showPage('home')">Home</div>
+      <div class="nav-bubble" onclick="showPage('about')" tabindex="0" role="button" aria-label="Go to About page">About</div>
+      <div class="nav-bubble" onclick="showPage('projects')" tabindex="0" role="button" aria-label="Go to Projects page">Projects</div>
+      <div class="nav-bubble" onclick="showPage('experience')" tabindex="0" role="button" aria-label="Go to Experience page">Experience</div>
+      <div class="nav-bubble" onclick="showPage('contact')" tabindex="0" role="button" aria-label="Go to Contact page">Contact</div>
+      <div class="nav-bubble" onclick="showPage('home')" tabindex="0" role="button" aria-label="Go to Home page">Home</div>
       
       <h1 class="main-title">Kaji Sadman Sakib</h1>
       <p class="main-subtitle">Machine Learning Engineer | <span style="color: #fff;">Research Enthusiast | Web Developer</span></p>
@@ -526,10 +580,10 @@
 
   <!-- ABOUT PAGE -->
   <div class="page" id="about">
-    <div class="back-btn" onclick="showPage('home')">←</div>
+    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Back to Home">←</div>
     
     <div class="content-bubble about-image-bubble bubble-1">
-      <img src="images/profile.jpg" alt="Kaji Sadman Sakib" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+      <img src="images/profile.jpg" alt="Kaji Sadman Sakib's profile picture">
     </div>
     
     <div class="content-bubble about-bubble bubble-2">
@@ -563,111 +617,129 @@
 
   <!-- PROJECTS PAGE -->
   <div class="page" id="projects">
-    <div class="back-btn" onclick="showPage('home')">←</div>
+    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Back to Home">←</div>
     
-    <div class="content-bubble project-bubble bubble-1">
-      <h3>Spotify Clone</h3>
-      <p>Full-featured music streaming application with modern UI/UX design.</p>
-      <a href="https://github.com/ssakib04/Spotify-clone" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-2">
-      <h3>Snake Game</h3>
-      <p>Classic snake game implementation with smooth gameplay and scoring system.</p>
-      <a href="https://github.com/ssakib04/Snake-Game" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-3">
-      <h3>Linear Regression</h3>
-      <p>Machine learning model for predictive analysis using linear regression algorithms.</p>
-      <a href="https://github.com/ssakib04/Linear-Regression" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-4">
-      <h3>K-Means Segmentation</h3>
-      <p>Unsupervised learning implementation for data clustering and segmentation.</p>
-      <a href="https://github.com/ssakib04/K-Means-Segmentation" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-5">
-      <h3>Support Vector Machine</h3>
-      <p>Classification algorithm implementation with kernel methods and optimization.</p>
-      <a href="https://github.com/ssakib04/Support-Vector-Machine" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-6">
-      <h3>Hand Gesture Recognition</h3>
-      <p>Computer vision project using deep learning for real-time gesture detection.</p>
-      <a href="https://github.com/ssakib04/Hand-Gesture-Recognition" target="_blank">View on GitHub</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-7">
-      <h3>More Projects</h3>
-      <p>Explore additional projects and contributions on my GitHub profile.</p>
-      <a href="https://github.com/ssakib04" target="_blank">View Profile</a>
-    </div>
-    
-    <div class="content-bubble project-bubble bubble-8">
-      <h3>Open Source</h3>
-      <p>Contributing to open source community with innovative solutions.</p>
-      <a href="https://github.com/ssakib04" target="_blank">See Contributions</a>
+    <div class="projects-container">
+      <div class="project-card" tabindex="0" role="article" aria-label="Spotify Clone project">
+        <img src="images/spotify-clone.jpg" alt="Spotify Clone project screenshot">
+        <h3>Spotify Clone</h3>
+        <p>Full-featured music streaming application with modern UI/UX design.</p>
+        <a href="https://github.com/ssakib04/Spotify-clone" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="Snake Game project">
+        <img src="images/snake-game.jpg" alt="Snake Game project screenshot">
+        <h3>Snake Game</h3>
+        <p>Classic snake game implementation with smooth gameplay and scoring system.</p>
+        <a href="https://github.com/ssakib04/Snake-Game" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="Linear Regression project">
+        <img src="images/linear-regression.jpg" alt="Linear Regression project screenshot">
+        <h3>Linear Regression</h3>
+        <p>Machine learning model for predictive analysis using linear regression algorithms.</p>
+        <a href="https://github.com/ssakib04/Linear-Regression" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="K-Means Segmentation project">
+        <img src="images/k-means.jpg" alt="K-Means Segmentation project screenshot">
+        <h3>K-Means Segmentation</h3>
+        <p>Unsupervised learning implementation for data clustering and segmentation.</p>
+        <a href="https://github.com/ssakib04/K-Means-Segmentation" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="Support Vector Machine project">
+        <img src="images/svm.jpg" alt="Support Vector Machine project screenshot">
+        <h3>Support Vector Machine</h3>
+        <p>Classification algorithm implementation with kernel methods and optimization.</p>
+        <a href="https://github.com/ssakib04/Support-Vector-Machine" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="Hand Gesture Recognition project">
+        <img src="images/hand-gesture.jpg" alt="Hand Gesture Recognition project screenshot">
+        <h3>Hand Gesture Recognition</h3>
+        <p>Computer vision project using deep learning for real-time gesture detection.</p>
+        <a href="https://github.com/ssakib04/Hand-Gesture-Recognition" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="More Projects">
+        <img src="images/github-profile.jpg" alt="GitHub profile screenshot">
+        <h3>More Projects</h3>
+        <p>Explore additional projects and contributions on my GitHub profile.</p>
+        <a href="https://github.com/ssakib04" target="_blank">Open in GitHub</a>
+      </div>
+      
+      <div class="project-card" tabindex="0" role="article" aria-label="Open Source contributions">
+        <img src="images/open-source.jpg" alt="Open Source contributions screenshot">
+        <h3>Open Source</h3>
+        <p>Contributing to open source community with innovative solutions.</p>
+        <a href="https://github.com/ssakib04" target="_blank">Open in GitHub</a>
+      </div>
     </div>
   </div>
 
   <!-- EXPERIENCE PAGE -->
   <div class="page" id="experience">
-    <div class="back-btn" onclick="showPage('home')">←</div>
+    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Back to Home">←</div>
     
-    <div class="content-bubble experience-bubble" style="top: 15%; left: calc(50% - 320px); animation-delay: 0s;">
+    <div class="content-bubble experience-bubble exp-bubble-1" tabindex="0" role="article" aria-label="Prodigy InfoTech experience">
       <h3>Prodigy InfoTech</h3>
       <p><strong>Role:</strong> Machine Learning Intern</p>
       <p><strong>Duration:</strong> Oct 2024 - Dec 2024</p>
-      <p>Developed ML models and worked on data analysis projects. Gained hands-on experience with deep learning frameworks and real-world applications.</p>
+      <p>Developed ML models and worked on data analysis projects.</p>
       <a href="https://prodigyinfotech.dev" target="_blank">Visit Website</a>
     </div>
     
-    <div class="content-bubble experience-bubble" style="bottom: 15%; right: calc(50% - 320px); animation-delay: 1s;">
+    <div class="content-bubble experience-bubble exp-bubble-2" tabindex="0" role="article" aria-label="BritSync Itl. experience">
       <h3>BritSync Itl.</h3>
       <p><strong>Role:</strong> Web Development Intern</p>
       <p><strong>Duration:</strong> Feb 2024 - Jun 2024</p>
-      <p>Built responsive web applications and enhanced user experience. Worked with modern web technologies and collaborative development practices.</p>
+      <p>Built responsive web applications and enhanced user experience.</p>
       <a href="https://britsync.co.uk/" target="_blank">Visit Website</a>
+    </div>
+    
+    <div class="content-bubble experience-bubble exp-bubble-3" tabindex="0" role="article" aria-label="Freelance experience">
+      <h3>Freelance Developer</h3>
+      <p><strong>Role:</strong> Machine Learning & Web Developer</p>
+      <p><strong>Duration:</strong> Jan 2023 - Present</p>
+      <p>Developed custom ML models and web solutions for clients.</p>
+      <a href="https://github.com/ssakib04" target="_blank">View Projects</a>
     </div>
   </div>
 
   <!-- CONTACT PAGE -->
   <div class="page" id="contact">
-    <div class="back-btn" onclick="showPage('home')">←</div>
+    <div class="back-btn" onclick="showPage('home')" tabindex="0" role="button" aria-label="Back to Home">←</div>
     
-    <div class="content-bubble contact-bubble bubble-1">
+    <div class="content-bubble contact-bubble contact-bubble-1" tabindex="0" role="button" aria-label="Email contact">
       <a href="mailto:kazisadmansakib@gmail.com" style="color: #000; text-decoration: none;">
         <strong>Email</strong><br>
         Get in touch
       </a>
     </div>
     
-    <div class="content-bubble contact-bubble bubble-2">
+    <div class="content-bubble contact-bubble contact-bubble-2" tabindex="0" role="button" aria-label="GitHub profile">
       <a href="https://github.com/ssakib04" target="_blank" style="color: #000; text-decoration: none;">
         <strong>GitHub</strong><br>
         Code & Projects
       </a>
     </div>
     
-    <div class="content-bubble contact-bubble bubble-3">
+    <div class="content-bubble contact-bubble contact-bubble-3" tabindex="0" role="button" aria-label="LinkedIn profile">
       <a href="https://www.linkedin.com/in/kajisadmansakib/" target="_blank" style="color: #000; text-decoration: none;">
         <strong>LinkedIn</strong><br>
         Professional Network
       </a>
     </div>
     
-    <div class="content-bubble contact-bubble bubble-4">
+    <div class="content-bubble contact-bubble contact-bubble-4" tabindex="0" role="button" aria-label="HackerRank profile">
       <a href="https://www.hackerrank.com/profile/ssakib218" target="_blank" style="color: #000; text-decoration: none;">
         <strong>HackerRank</strong><br>
         Coding Skills
       </a>
     </div>
     
-    <div class="content-bubble contact-bubble bubble-5">
+    <div class="content-bubble contact-bubble contact-bubble-5" tabindex="0" role="button" aria-label="Codeforces profile">
       <a href="https://codeforces.com/profile/Shafat04" target="_blank" style="color: #000; text-decoration: none;">
         <strong>Codeforces</strong><br>
         Competitive Programming
@@ -677,17 +749,20 @@
 
   <script>
     function showPage(pageId) {
-      // Hide all pages
       const pages = document.querySelectorAll('.page');
-      pages.forEach(page => {
-        page.classList.remove('active');
-      });
-      
-      // Show selected page
+      pages.forEach(page => page.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
     }
+
+    // Add keyboard accessibility
+    document.querySelectorAll('.nav-bubble, .back-btn, .content-bubble, .project-card').forEach(element => {
+      element.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          element.click();
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
-
