@@ -1,0 +1,9 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build && node scripts/sync-root.mjs",
+    "preview": "npm --prefix web run preview"
+  }
+}
