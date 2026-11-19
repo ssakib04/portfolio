@@ -19,7 +19,7 @@ export function Skills() {
       </h2>
       <div className="skill-groups">
         {skillGroups.map((group) => (
-          <div className="skill-group" key={group.title} data-reveal>
+          <div className="skill-group glass" key={group.title} data-reveal>
             <h3>{group.title}</h3>
             <ul>
               {group.items.map((item, index) => (

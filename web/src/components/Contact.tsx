@@ -36,7 +36,7 @@ export function Contact() {
       <h2 id="contact-title" className="display" data-reveal>
         Write.
       </h2>
-      <p className="contact-lead" data-reveal>
+      <p className="contact-lead glass" data-reveal>
         Software Engineer at {person.company}. For roles, collaborations, and questions about the work.
       </p>
       <div className="email-row" data-reveal>
@@ -54,7 +54,7 @@ export function Contact() {
           {copied ? 'Email address copied to clipboard.' : ''}
         </p>
       </div>
-      <ul className="contact-list" data-reveal>
+      <ul className="contact-list glass" data-reveal>
         <li>
           <span>Phone</span>
           <a href={person.phoneHref}>{person.phoneDisplay}</a>

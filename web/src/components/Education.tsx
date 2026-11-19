@@ -19,7 +19,7 @@ export function Education() {
           <p className="edu-school">{education.school}</p>
           <p className="edu-dates">{education.dates}</p>
         </div>
-        <ul data-reveal>
+        <ul className="glass" data-reveal>
           {education.points.map((point) => (
             <li key={point}>{point}</li>
           ))}

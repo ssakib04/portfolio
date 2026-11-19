@@ -38,7 +38,7 @@ export function Experience() {
             <span>Practice</span>
           </p>
           <h2 id="experience-title">Experience</h2>
-          <p className="section-note">
+          <p className="section-note glass">
             Software Engineer at BJIT. The path runs through applied AI, product engineering, and
             independent brand sites.
           </p>
@@ -56,7 +56,7 @@ export function Experience() {
                 <p className="role-org">{role.org}</p>
                 {role.origin ? <p className="role-origin">{role.origin}</p> : null}
               </div>
-              <ul>
+              <ul className="glass">
                 {role.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}

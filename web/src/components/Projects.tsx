@@ -87,7 +87,7 @@ export function Projects() {
                 <div className="project-art" aria-hidden="true">
                   <ProjectArt index={project.index} />
                 </div>
-                <div className="project-copy">
+                <div className="project-copy glass">
                 <p className="project-index" aria-hidden="true">
                   {project.index}
                   <span> / 04</span>

@@ -18,11 +18,11 @@ export function About() {
         {summary.quote}
       </h2>
       <div className="about-grid">
-        <div className="about-copy" data-reveal>
+        <div className="about-copy glass" data-reveal>
           <p>{summary.lead}</p>
           <p>{summary.support}</p>
         </div>
-        <aside className="now-card" data-reveal>
+        <aside className="now-card glass" data-reveal>
           <p className="now-label">Now</p>
           <p className="now-role">{person.role}</p>
           <p className="now-org">{person.company}</p>

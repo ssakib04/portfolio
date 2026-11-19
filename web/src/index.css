@@ -539,6 +539,17 @@ html.has-cursor * {
   color: var(--gold);
 }
 
+.hero h1,
+.display,
+h2,
+.project-name,
+.edu-degree,
+.email {
+  text-shadow:
+    0 1px 1px rgba(28, 12, 6, 0.4),
+    0 14px 32px rgba(28, 12, 6, 0.28);
+}
+
 .hero h1 {
   margin-top: auto;
   font-family: var(--serif);
@@ -733,13 +744,6 @@ html.has-cursor * {
 }
 
 .about-copy,
-.skill-group,
-.role ul,
-.edu-grid ul {
-  background: rgba(12, 8, 6, 0.58);
-}
-
-.about-copy,
 .experience-sticky,
 .role,
 .edu-grid > div,
@@ -791,10 +795,9 @@ html.has-cursor * {
   align-self: start;
   position: relative;
   z-index: 1;
-  padding: 1.4rem 1.35rem 1.5rem;
-  border: 1px solid var(--line);
-  background: rgba(12, 8, 6, 0.62);
-  backdrop-filter: blur(10px);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .now-role {
@@ -980,8 +983,8 @@ html.has-cursor * {
   position: relative;
   z-index: 1;
   max-width: 48rem;
-  padding-top: 0.4rem;
-  background: linear-gradient(180deg, transparent, rgba(12, 8, 6, 0.55) 18%, rgba(12, 8, 6, 0.62));
+  padding-top: 0;
+  background: transparent;
 }
 
 .project-index {
@@ -1099,16 +1102,9 @@ html.has-cursor * {
 }
 
 .contact-lead {
-  max-width: 36rem;
+  max-width: 40rem;
   margin-top: 1.2rem;
-  padding: 0.85rem 1rem;
-  background: rgba(12, 8, 6, 0.78);
   color: var(--ivory);
-}
-
-.contact-list {
-  background: rgba(12, 8, 6, 0.72);
-  padding-inline: 1rem;
 }
 
 .email-row {
@@ -1436,6 +1432,113 @@ html.has-cursor * {
   50% {
     transform: scaleY(1);
     opacity: 1;
+  }
+}
+
+.glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: 1.35rem;
+  background: transparent;
+  box-shadow: 0 36px 70px -34px rgba(32, 12, 4, 0.48);
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"),
+    linear-gradient(168deg, rgba(255, 240, 216, 0.2) 0%, rgba(62, 30, 16, 0.46) 16%, rgba(22, 11, 8, 0.66) 100%);
+  background-size: 140px 140px, auto;
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(18px) saturate(1.35) contrast(1.04);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35) contrast(1.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 246, 228, 0.48),
+    inset 0 -18px 32px rgba(40, 16, 8, 0.12);
+  mask-image: radial-gradient(140% 130% at 50% 42%, #000 74%, transparent 100%);
+  -webkit-mask-image: radial-gradient(140% 130% at 50% 42%, #000 74%, transparent 100%);
+}
+
+.glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 246, 226, 0.72),
+    rgba(255, 228, 186, 0.08) 34%,
+    rgba(120, 64, 28, 0.05) 68%,
+    rgba(255, 214, 160, 0.38)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.about-copy.glass,
+.now-card.glass,
+.section-note.glass,
+.skill-group.glass,
+.contact-lead.glass,
+.project-copy.glass {
+  padding: 1.45rem 1.55rem 1.5rem;
+}
+
+.role ul.glass,
+.edu-grid ul.glass {
+  margin-top: 0.55rem;
+  padding: 1.15rem 1.25rem 1.2rem;
+}
+
+.contact-list.glass {
+  padding: 0.35rem 1.25rem 0.45rem;
+}
+
+.glass p,
+.glass li {
+  color: #f4efe6;
+}
+
+.glass .now-label,
+.glass .now-dates,
+.glass .now-origin {
+  color: #eadfce;
+}
+
+.copy {
+  color: #f4efe6;
+  background: rgba(22, 11, 8, 0.42);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+}
+
+.role h3,
+.role-org,
+.role-dates,
+.role-origin,
+.project-title,
+.project-meta,
+.lede {
+  text-shadow:
+    0 1px 1px rgba(28, 12, 6, 0.45),
+    0 10px 22px rgba(28, 12, 6, 0.3);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass::before {
+    background: rgba(36, 18, 12, 0.88);
   }
 }
 
