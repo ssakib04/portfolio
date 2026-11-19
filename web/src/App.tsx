@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { About } from './components/About'
+import { Atmosphere } from './components/Atmosphere'
 import { Contact } from './components/Contact'
 import { Cursor } from './components/Cursor'
 import { Education } from './components/Education'
@@ -9,6 +10,7 @@ import { Hero } from './components/Hero'
 import { Intro } from './components/Intro'
 import { Nav } from './components/Nav'
 import { Projects } from './components/Projects'
+import { Ribbon } from './components/Ribbon'
 import { Skills } from './components/Skills'
 import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
@@ -60,6 +62,7 @@ export default function App() {
       <a className="skip-link" href="#content">
         Skip to content
       </a>
+      <Atmosphere />
       <div className="grain" aria-hidden="true" />
       <Cursor />
       {!ready ? <Intro onDone={() => setReady(true)} /> : null}
@@ -68,9 +71,11 @@ export default function App() {
         <main id="content">
           <Hero shown={ready} />
           <About />
+          <Ribbon />
           <Experience />
           <Projects />
           <Skills />
+          <Ribbon />
           <Education />
           <Contact />
         </main>

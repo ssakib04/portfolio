@@ -1,8 +1,15 @@
 import { skillGroups } from '../content'
+import { ClusterField } from './Motifs'
 
 export function Skills() {
   return (
     <section id="skills" className="section skills" aria-labelledby="skills-title">
+      <p className="watermark watermark-right" aria-hidden="true">
+        RAG
+      </p>
+      <div className="section-motif section-motif-cluster" aria-hidden="true">
+        <ClusterField seed={19} />
+      </div>
       <div className="section-kicker" data-reveal>
         <span>05</span>
         <span>Capabilities</span>

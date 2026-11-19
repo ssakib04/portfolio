@@ -1,8 +1,15 @@
 import { person, summary } from '../content'
+import { GraphField } from './Motifs'
 
 export function About() {
   return (
     <section id="about" className="section about" aria-labelledby="about-title">
+      <p className="watermark watermark-right" aria-hidden="true">
+        Agents
+      </p>
+      <div className="section-motif" aria-hidden="true">
+        <GraphField seed={7} />
+      </div>
       <div className="section-kicker" data-reveal>
         <span>02</span>
         <span>About</span>

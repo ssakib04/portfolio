@@ -3,6 +3,9 @@ import { education } from '../content'
 export function Education() {
   return (
     <section id="education" className="section education" aria-labelledby="education-title">
+      <p className="watermark watermark-left" aria-hidden="true">
+        2019
+      </p>
       <div className="section-kicker" data-reveal>
         <span>06</span>
         <span>Study</span>

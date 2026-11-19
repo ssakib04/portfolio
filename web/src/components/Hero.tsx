@@ -1,28 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { person } from '../content'
 import { gsap, useGSAP } from '../lib/gsap'
 
 type Props = { shown: boolean }
 
 export function Hero({ shown }: Props) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
   const root = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    let cleanup = () => {}
-    let dead = false
-    import('../lib/silk').then(({ mountSilk }) => {
-      if (dead) return
-      cleanup = mountSilk(canvas, { animate: !reduce })
-    })
-    return () => {
-      dead = true
-      cleanup()
-    }
-  }, [])
 
   useGSAP(
     () => {
@@ -46,8 +29,13 @@ export function Hero({ shown }: Props) {
 
   return (
     <section className={shown ? 'hero is-shown' : 'hero'} id="top" ref={root}>
-      <canvas ref={canvasRef} className="hero-silk" aria-hidden="true" />
       <div className="hero-scrim" aria-hidden="true" />
+      <p className="hero-spine" aria-hidden="true">
+        <span>LLM</span>
+        <span>Agents</span>
+        <span>RAG</span>
+        <span>Clustering</span>
+      </p>
       <div className="hero-inner">
         <p className="hero-kicker">
           <span>01</span>

@@ -28,6 +28,9 @@ export function Experience() {
 
   return (
     <section id="experience" className="section experience" ref={root} aria-labelledby="experience-title">
+      <p className="watermark watermark-ghost" aria-hidden="true">
+        BJIT
+      </p>
       <div className="experience-layout">
         <div className="experience-sticky">
           <p className="section-kicker">

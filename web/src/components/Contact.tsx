@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { person } from '../content'
 import { Magnetic } from './Magnetic'
+import { FilamentField } from './Motifs'
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
@@ -25,6 +26,9 @@ export function Contact() {
 
   return (
     <section id="contact" className="section contact" aria-labelledby="contact-title">
+      <div className="section-motif section-motif-right" aria-hidden="true">
+        <FilamentField />
+      </div>
       <div className="section-kicker" data-reveal>
         <span>07</span>
         <span>Correspondence</span>

@@ -2,6 +2,13 @@ import { useRef } from 'react'
 import { projects } from '../content'
 import { gsap, ScrollTrigger, useGSAP } from '../lib/gsap'
 import { getLenis } from '../lib/scroll'
+import { ClusterField, FilamentField, GraphField } from './Motifs'
+
+function ProjectArt({ index }: { index: string }) {
+  if (index === '02') return <ClusterField seed={21} />
+  if (index === '03') return <GraphField seed={4} />
+  return <FilamentField />
+}
 
 export function Projects() {
   const root = useRef<HTMLElement>(null)
@@ -77,6 +84,10 @@ export function Projects() {
           <div className="projects-track">
             {projects.map((project) => (
               <article className="project-panel" key={project.index} id={`project-${project.index}`}>
+                <div className="project-art" aria-hidden="true">
+                  <ProjectArt index={project.index} />
+                </div>
+                <div className="project-copy">
                 <p className="project-index" aria-hidden="true">
                   {project.index}
                   <span> / 04</span>
@@ -106,6 +117,7 @@ export function Projects() {
                     ))}
                   </div>
                 ) : null}
+                </div>
               </article>
             ))}
           </div>
